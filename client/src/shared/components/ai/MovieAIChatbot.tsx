@@ -17,6 +17,8 @@ import {
   type AIAssistantMovie,
 } from "../../services/ai.api";
 
+import { normalizeApiError } from "../../services/api";
+
 import { cn } from "../../lib/cn";
 import AiAvatar, { type AvatarStatus } from "./ai-avatar";
 
@@ -674,13 +676,14 @@ export default function MovieAIChatbot() {
 
       console.error("Failed to chat with Momo:", error);
 
+      const normalizedError = normalizeApiError(error);
+
       setMessages((current) => [
         ...current,
         {
           id: replyId,
           role: "assistant",
-          content:
-            "Sorry, I couldn't process that right now. Please try again.",
+          content: normalizedError.message,
         },
       ]);
     } finally {

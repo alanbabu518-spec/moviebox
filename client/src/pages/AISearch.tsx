@@ -11,13 +11,48 @@ import {
 
 const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
 
+function getErrorMessage(error: unknown): string {
+  const apiError = error as {
+    response?: {
+      status?: number;
+      data?: {
+        message?: string;
+      };
+    };
+  };
+
+  const status = apiError.response?.status;
+  const message = apiError.response?.data?.message;
+
+  if (status === 429 || status === 503) {
+    return message || "MovieBox AI is busy. Please try again shortly.";
+  }
+
+  if (status === 504) {
+    return "MovieBox AI took too long to respond. Please try again.";
+  }
+
+  if (status === 401 || status === 403) {
+    return "AI service authentication failed. Please contact support.";
+  }
+
+  if (message) {
+    return message;
+  }
+
+  if (error instanceof Error && error.message) {
+    return error.message;
+  }
+
+  return "Unable to search movies right now. Please try again.";
+}
+
 const AISearch = () => {
   const navigate = useNavigate();
 
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState<AISearchMovie[]>([]);
-  const [intent, setIntent] =
-    useState<AISearchIntent | null>(null);
+  const [intent, setIntent] = useState<AISearchIntent | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -34,6 +69,8 @@ const AISearch = () => {
     try {
       setLoading(true);
       setError("");
+      setMovies([]);
+      setIntent(null);
 
       const result = await searchWithAI(trimmedQuery);
 
@@ -42,9 +79,7 @@ const AISearch = () => {
     } catch (error: unknown) {
       console.error("AI movie search failed:", error);
 
-      setError(
-        "Unable to search movies right now. Check your connection and try again.",
-      );
+      setError(getErrorMessage(error));
       setMovies([]);
       setIntent(null);
     } finally {
@@ -139,7 +174,9 @@ const AISearch = () => {
             <button
               type="button"
               onClick={(event) => {
-                const form = event.currentTarget.closest("main")?.querySelector("form");
+                const form = event.currentTarget
+                  .closest("main")
+                  ?.querySelector("form");
                 form?.requestSubmit();
               }}
               disabled={loading || !query.trim()}
@@ -179,9 +216,7 @@ const AISearch = () => {
         {!loading && movies.length > 0 && (
           <section className="mt-12">
             <div className="mb-6">
-              <h2 className="text-xl font-semibold">
-                AI Search Results
-              </h2>
+              <h2 className="text-xl font-semibold">AI Search Results</h2>
 
               <p className="mt-1 text-sm text-zinc-500">
                 {movies.length} {movies.length === 1 ? "movie" : "movies"} found

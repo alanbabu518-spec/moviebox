@@ -5,21 +5,31 @@ import { redis } from "../../config/redis.js";
 const MAGIC_LINK_TTL_SECONDS = 10 * 60;
 const MAGIC_LINK_TOKEN_PATTERN = /^[a-f0-9]{64}$/;
 
-const getMagicLinkKey = (token: string): string =>
-  `moviebox:magic-link:${token}`;
+const hashMagicLinkToken = (token: string): string =>
+  crypto.createHash("sha256").update(token).digest("hex");
+
+const getMagicLinkKey = (tokenHash: string): string =>
+  `moviebox:magic-link:${tokenHash}`;
 
 export const createMagicLinkToken = async (email: string): Promise<string> => {
   const normalizedEmail = email.trim().toLowerCase();
   const token = crypto.randomBytes(32).toString("hex");
+  const tokenHash = hashMagicLinkToken(token);
 
-  await redis.set(
-    getMagicLinkKey(token),
+  const result = await redis.set(
+    getMagicLinkKey(tokenHash),
     JSON.stringify({ email: normalizedEmail }),
     "EX",
     MAGIC_LINK_TTL_SECONDS,
     "NX",
   );
 
+  if (result !== "OK") {
+    throw new Error("Unable to create a unique magic-link token");
+  }
+
+  // Return the original token only to the email service.
+  // Redis stores only its SHA-256 hash.
   return token;
 };
 
@@ -27,13 +37,14 @@ export const consumeMagicLinkToken = async (
   token: string,
 ): Promise<{ email: string } | null> => {
   // Reject malformed tokens before querying Redis.
-  if (!MAGIC_LINK_TOKEN_PATTERN.test(token)) {
+  if (typeof token !== "string" || !MAGIC_LINK_TOKEN_PATTERN.test(token)) {
     return null;
   }
 
+  const tokenHash = hashMagicLinkToken(token);
+
   // GETDEL atomically retrieves and deletes the token.
-  // A concurrent verification request cannot consume it again.
-  const data = (await redis.call("GETDEL", getMagicLinkKey(token))) as
+  const data = (await redis.call("GETDEL", getMagicLinkKey(tokenHash))) as
     | string
     | null;
 
@@ -55,7 +66,11 @@ export const consumeMagicLinkToken = async (
 
     const email = parsed.email.trim().toLowerCase();
 
-    if (!email || email.length > 254) {
+    if (
+      !email ||
+      email.length > 254 ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
       return null;
     }
 

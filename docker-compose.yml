@@ -26,11 +26,11 @@ services:
     environment:
       NODE_ENV: production
       PORT: 5000
-      CLIENT_URL: http://localhost:3000
+      CLIENT_URL: https://movie-box-gilt-seven.vercel.app
       DATABASE_URL: postgresql://moviebox:${POSTGRES_PASSWORD:-moviebox_dev_password}@postgres:5432/moviebox
       REDIS_URL: redis://redis:6379
     ports:
-       - "5001:5000"
+      - "5001:5000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -62,7 +62,9 @@ services:
     volumes:
       - moviebox_postgres_data:/var/lib/postgresql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U moviebox -d moviebox"]
+      test:
+        - CMD-SHELL
+        - pg_isready -U moviebox -d moviebox
       interval: 5s
       timeout: 5s
       retries: 5
@@ -78,7 +80,10 @@ services:
     volumes:
       - moviebox_redis_data:/data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test:
+        - CMD
+        - redis-cli
+        - ping
       interval: 5s
       timeout: 5s
       retries: 5

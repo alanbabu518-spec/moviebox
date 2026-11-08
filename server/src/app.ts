@@ -10,6 +10,9 @@ import { env } from "./config/env.js";
 
 const app = express();
 
+// Disable Express fingerprinting.
+app.disable("x-powered-by");
+
 // Security headers
 app.use(helmet());
 

@@ -1,129 +1,213 @@
 import { AppError } from "../../shared/utils/appError.js";
-import { nvidiaClient } from "./nvidia.client.js";
 
-const DEFAULT_NVIDIA_BASE_URL = "https://integrate.api.nvidia.com/v1";
-const DEFAULT_NVIDIA_MODELS = [
-  "minimaxai/minimax-m3.1-flash",
-  "nvidia/nemotron-3.5-bolt-e4b",
-  "nvidia/nemotron-3.5-lightning-30b-a3b",
-] as const;
+const DEFAULT_GEMINI_MODEL = "gemini-3.8-flash";
 
-const REQUEST_TIMEOUT_MS = 12_000;
+const DEFAULT_GEMINI_FALLBACK_MODELS = [
+  "gemini-3.7-flash",
+  "gemini-3.6-flash",
+  "gemini-3.5-flash-lite",
+];
+
+const GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta";
+
+const REQUEST_TIMEOUT_MS = 15_000;
 
 type ChatRole = "system" | "user" | "assistant";
 type ChatMessage = { role: ChatRole; content: string };
-type ChatCompletionResponse = {
-  choices?: Array<{ message?: { content?: string | null } }>;
-  error?: { message?: string };
+
+type GeminiGenerateContentResponse = {
+  candidates?: Array<{
+    content?: {
+      parts?: Array<{ text?: string }>;
+    };
+    finishReason?: string;
+  }>;
+  promptFeedback?: {
+    blockReason?: string;
+  };
+  error?: {
+    code?: number;
+    message?: string;
+    status?: string;
+  };
 };
 
-const getNvidiaConfig = () => {
-  const apiKey = process.env.NVIDIA_API_KEY?.trim();
-  if (!apiKey) {
-    throw new AppError(
-      "NVIDIA AI is not configured. Set NVIDIA_API_KEY in the server environment.",
-      503,
-    );
-  }
+const getGeminiModels = (): string[] => {
+  const primary = process.env.GEMINI_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
 
-  const baseUrl = (
-    process.env.NVIDIA_BASE_URL?.trim() || DEFAULT_NVIDIA_BASE_URL
-  ).replace(/\/+$/, "");
-  const primaryModel =
-    process.env.NVIDIA_MODEL?.trim() || DEFAULT_NVIDIA_MODELS[0];
-  const configuredFallbacks = process.env.NVIDIA_FALLBACK_MODELS?.split(",")
-    .map((model) => model.trim())
-    .filter(Boolean);
-  const models = [
-    primaryModel,
-    ...(configuredFallbacks?.length
-      ? configuredFallbacks
-      : DEFAULT_NVIDIA_MODELS.slice(1)),
-  ].filter((model, index, all) => all.indexOf(model) === index);
+  const configuredFallbacks = process.env.GEMINI_FALLBACK_MODELS?.trim();
 
-  return { apiKey, baseUrl, models };
+  const fallbacks = configuredFallbacks
+    ? configuredFallbacks
+        .split(",")
+        .map((model) => model.trim())
+        .filter(Boolean)
+    : DEFAULT_GEMINI_FALLBACK_MODELS;
+
+  // Set removes duplicate model IDs while preserving their order.
+  return [...new Set([primary, ...fallbacks])];
 };
 
 const createChatCompletion = async (
   messages: ChatMessage[],
   options: { temperature: number; maxTokens: number },
 ): Promise<string> => {
-  const { models } = getNvidiaConfig();
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
 
-  let lastErrorMessage = "No NVIDIA model returned a valid response.";
-  let lastStatus = 503;
+  if (!apiKey) {
+    throw new AppError(
+      "MovieBox AI is not configured. Set GEMINI_API_KEY in the server environment.",
+      503,
+    );
+  }
+
+  const models = getGeminiModels();
+  const systemMessage = messages.find((message) => message.role === "system");
+
+  const contents = messages
+    .filter((message) => message.role !== "system")
+    .map((message) => ({
+      role: message.role === "assistant" ? "model" : "user",
+      parts: [{ text: message.content }],
+    }));
+
+  if (contents.length === 0) {
+    throw new AppError("A user message is required for MovieBox AI.", 400);
+  }
+
+  let lastErrorMessage = "No Gemini model returned a response.";
 
   for (const model of models) {
+    const url =
+      `${GEMINI_API_BASE_URL}/models/` +
+      `${encodeURIComponent(model)}:generateContent` +
+      `?key=${encodeURIComponent(apiKey)}`;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
     try {
-      const completion = await nvidiaClient.chat.completions.create(
-        {
+      console.info("MovieBox Gemini: trying model", { model });
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        signal: controller.signal,
+        body: JSON.stringify({
+          ...(systemMessage
+            ? {
+                systemInstruction: {
+                  parts: [{ text: systemMessage.content }],
+                },
+              }
+            : {}),
+          contents,
+          generationConfig: {
+            // Gemini 3.8 recommends omitting temperature/topP/topK.
+            // maxOutputTokens is supported and keeps the existing limits.
+            maxOutputTokens: options.maxTokens,
+          },
+        }),
+      });
+
+      const payload = (await response
+        .json()
+        .catch(() => null)) as GeminiGenerateContentResponse | null;
+
+      if (!response.ok) {
+        const providerMessage =
+          payload?.error?.message ||
+          `Gemini API returned HTTP ${response.status}.`;
+
+        console.error("MovieBox Gemini model failed:", {
           model,
-          messages,
-          temperature: options.temperature,
-          max_tokens: options.maxTokens,
-          stream: false,
-        },
-        {
-          timeout: REQUEST_TIMEOUT_MS,
-          maxRetries: 0,
-        },
-      );
+          status: response.status,
+          providerStatus: payload?.error?.status,
+          message: providerMessage,
+        });
 
-      const content = completion.choices[0]?.message?.content?.trim();
+        if (response.status === 401 || response.status === 403) {
+          throw new AppError(
+            "Gemini rejected the API key. Check GEMINI_API_KEY in the server environment.",
+            502,
+          );
+        }
 
-      if (!content) {
-        lastErrorMessage = `Model ${model} returned an empty response.`;
-        lastStatus = 502;
+        // These errors are generally request/configuration errors.
+        // Trying another model will not fix the same malformed request.
+        if (
+          response.status === 400 ||
+          response.status === 405 ||
+          response.status === 413
+        ) {
+          throw new AppError(
+            "Gemini rejected the request. Check the request payload and model configuration.",
+            502,
+          );
+        }
 
-        console.warn("MovieBox AI received an empty response:", { model });
+        // Model not found, rate limits, temporary overload, and provider
+        // errors can be recovered by trying the next configured model.
+        lastErrorMessage = providerMessage;
         continue;
       }
 
-      console.info("MovieBox AI model succeeded:", { model });
+      const content = payload?.candidates?.[0]?.content?.parts
+        ?.map((part) => part.text ?? "")
+        .join("")
+        .trim();
 
+      if (!content) {
+        lastErrorMessage =
+          payload?.candidates?.[0]?.finishReason ||
+          payload?.promptFeedback?.blockReason ||
+          "Gemini returned an empty response.";
+
+        console.warn("MovieBox Gemini returned no text:", {
+          model,
+          reason: lastErrorMessage,
+        });
+
+        continue;
+      }
+
+      console.info("MovieBox Gemini: response generated", { model });
       return content;
     } catch (error: unknown) {
       if (error instanceof AppError) {
         throw error;
       }
 
-      const apiError = error as {
-        status?: number;
-        message?: string;
-        name?: string;
-      };
+      lastErrorMessage =
+        error instanceof Error ? error.message : "Unknown network error";
 
-      lastStatus = apiError.status ?? 502;
-      lastErrorMessage = apiError.message ?? "Unknown NVIDIA API error";
-
-      console.error("MovieBox NVIDIA request failed:", {
-        model,
-        status: lastStatus,
-        errorName: apiError.name,
-        message: lastErrorMessage,
-      });
-
-      // Credentials will not improve by switching models.
-      if (lastStatus === 401 || lastStatus === 403) {
-        throw new AppError(
-          "NVIDIA rejected the API credentials. Check NVIDIA_API_KEY.",
-          502,
-        );
+      if (
+        error instanceof Error &&
+        (error.name === "AbortError" || controller.signal.aborted)
+      ) {
+        console.warn("MovieBox Gemini model timed out; trying fallback:", {
+          model,
+        });
+      } else {
+        console.error("MovieBox Gemini request failed; trying fallback:", {
+          model,
+          message: lastErrorMessage,
+        });
       }
-
-      // Try the next model after a model or provider failure.
-      continue;
+    } finally {
+      clearTimeout(timeout);
     }
   }
 
-  console.error("All MovieBox AI models failed:", {
-    status: lastStatus,
-    message: lastErrorMessage,
+  console.error("All MovieBox Gemini models failed:", {
     models,
+    lastError: lastErrorMessage,
   });
 
   throw new AppError(
-    "MovieBox AI is temporarily unavailable. Check server logs for the provider error.",
+    "MovieBox AI is temporarily unavailable. All configured Gemini models failed. Please try again shortly.",
     503,
   );
 };
@@ -187,12 +271,22 @@ export interface MovieAIChatRequest {
 
 const extractJson = <T>(content: string): T => {
   const cleaned = content
-    .replace(/^```json\s*/i, "")
-    .replace(/^```\s*/i, "")
+    .replace(/^```(?:json)?\s*/i, "")
     .replace(/\s*```$/i, "")
     .trim();
 
-  return JSON.parse(cleaned) as T;
+  try {
+    return JSON.parse(cleaned) as T;
+  } catch {
+    const start = cleaned.indexOf("{");
+    const end = cleaned.lastIndexOf("}");
+
+    if (start < 0 || end <= start) {
+      throw new Error("Gemini did not return valid JSON.");
+    }
+
+    return JSON.parse(cleaned.slice(start, end + 1)) as T;
+  }
 };
 
 export const askMovieAI = async (
@@ -222,7 +316,13 @@ ${request.question}
     { temperature: 0.5, maxTokens: 350 },
   );
 
-  return { answer: content || "Unable to generate an answer." };
+  const answer = content.trim();
+
+  if (!answer) {
+    throw new AppError("Gemini returned an empty answer.", 502);
+  }
+
+  return { answer };
 };
 
 export const extractAISearchIntent = async (

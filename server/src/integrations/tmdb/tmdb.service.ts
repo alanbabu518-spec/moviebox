@@ -30,7 +30,10 @@ export interface MovieFilterParams {
   genre?: string;
   language?: string;
   year?: string;
+  yearFrom?: string;
+  yearTo?: string;
   minRating?: string;
+  sortBy?: "popularity" | "rating" | "release_date";
   page?: number;
 }
 
@@ -81,7 +84,13 @@ axiosRetry(tmdbClient, {
 
 function hasFilters(params: MovieFilterParams): boolean {
   return Boolean(
-    params.genre || params.language || params.year || params.minRating,
+    params.genre ||
+    params.language ||
+    params.year ||
+    params.yearFrom ||
+    params.yearTo ||
+    params.minRating ||
+    params.sortBy,
   );
 }
 
@@ -93,7 +102,10 @@ function buildFilterCacheKey(
     genre: params.genre ?? "",
     language: params.language ?? "",
     year: params.year ?? "",
+    yearFrom: params.yearFrom ?? "",
+    yearTo: params.yearTo ?? "",
     minRating: params.minRating ?? "",
+    sortBy: params.sortBy ?? "",
     page: params.page ?? 1,
   };
 
@@ -101,6 +113,12 @@ function buildFilterCacheKey(
 }
 
 function buildDiscoverParams(params: MovieFilterParams) {
+  const sortBy = {
+    popularity: "popularity.desc",
+    rating: "vote_average.desc",
+    release_date: "primary_release_date.desc",
+  } as const;
+
   return {
     page: params.page || 1,
     include_adult: false,
@@ -108,7 +126,14 @@ function buildDiscoverParams(params: MovieFilterParams) {
     with_genres: params.genre || undefined,
     with_original_language: params.language || undefined,
     primary_release_year: params.year || undefined,
+    "primary_release_date.gte": params.yearFrom
+      ? `${params.yearFrom}-01-01`
+      : undefined,
+    "primary_release_date.lte": params.yearTo
+      ? `${params.yearTo}-12-31`
+      : undefined,
     "vote_average.gte": params.minRating || undefined,
+    sort_by: params.sortBy ? sortBy[params.sortBy] : "popularity.desc",
   };
 }
 
@@ -220,10 +245,7 @@ export const getTrendingMovies = async (
     const response = await tmdbClient.get<TMDBMovieListResponse>(
       "/discover/movie",
       {
-        params: {
-          ...buildDiscoverParams(params),
-          sort_by: "popularity.desc",
-        },
+        params: buildDiscoverParams(params),
       },
     );
 
@@ -503,10 +525,7 @@ export async function discoverMovies(
     const response = await tmdbClient.get<TMDBMovieListResponse>(
       "/discover/movie",
       {
-        params: {
-          ...buildDiscoverParams(params),
-          sort_by: "popularity.desc",
-        },
+        params: buildDiscoverParams(params),
       },
     );
 

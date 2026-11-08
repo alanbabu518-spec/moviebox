@@ -22,6 +22,13 @@ const cookieOptions = {
   path: "/",
 };
 
+const authCookieClearOptions = {
+  httpOnly: true,
+  secure: env.nodeEnv === "production",
+  sameSite: env.nodeEnv === "production" ? ("none" as const) : ("lax" as const),
+  path: "/",
+};
+
 const oauthStateCookieName = "moviebox_oauth_state";
 
 const oauthStateCookieOptions = {
@@ -30,6 +37,27 @@ const oauthStateCookieOptions = {
   sameSite: "lax" as const,
   maxAge: 5 * 60 * 1000,
   path: "/api/auth/google/callback",
+};
+
+const clearAuthCookie = (res: Response) => {
+  res.clearCookie(env.cookieName, authCookieClearOptions);
+};
+
+const clearOAuthStateCookie = (res: Response) => {
+  res.clearCookie(oauthStateCookieName, {
+    httpOnly: true,
+    secure: env.nodeEnv === "production",
+    sameSite: "lax",
+    path: "/api/auth/google/callback",
+  });
+};
+
+// Prevent sensitive authentication responses from being cached
+// or exposing their URL through the Referer header.
+const protectAuthenticationResponse = (res: Response) => {
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Referrer-Policy", "no-referrer");
 };
 
 export const requestEmailLogin = async (req: Request, res: Response) => {
@@ -59,17 +87,14 @@ export const googleLogin = async (_req: Request, res: Response) => {
 };
 
 export const googleCallback = async (req: Request, res: Response) => {
+  protectAuthenticationResponse(res);
+
   const code = req.query.code;
   const state = req.query.state;
   const stateCookie = req.cookies?.[oauthStateCookieName];
 
   // Clear the state cookie regardless of callback validity.
-  res.clearCookie(oauthStateCookieName, {
-    httpOnly: true,
-    secure: env.nodeEnv === "production",
-    sameSite: "lax",
-    path: "/api/auth/google/callback",
-  });
+  clearOAuthStateCookie(res);
 
   if (
     typeof code !== "string" ||
@@ -90,10 +115,12 @@ export const googleCallback = async (req: Request, res: Response) => {
 
   res.cookie(env.cookieName, token, cookieOptions);
 
-  return res.redirect(env.clientUrl);
+  return res.redirect(302, env.clientUrl);
 };
 
 export const verifyEmailMagicLink = async (req: Request, res: Response) => {
+  protectAuthenticationResponse(res);
+
   const token = req.query.token;
 
   if (typeof token !== "string" || token.length === 0 || token.length > 2048) {
@@ -107,7 +134,7 @@ export const verifyEmailMagicLink = async (req: Request, res: Response) => {
 
   res.cookie(env.cookieName, result.token, cookieOptions);
 
-  return res.redirect(env.clientUrl);
+  return res.redirect(302, env.clientUrl);
 };
 
 export const getCurrentUser = async (req: Request, res: Response) => {
@@ -134,6 +161,8 @@ export const getCurrentUser = async (req: Request, res: Response) => {
   });
 
   if (!user) {
+    clearAuthCookie(res);
+
     return res.status(401).json({
       success: false,
       message: "User not found",
@@ -147,19 +176,8 @@ export const getCurrentUser = async (req: Request, res: Response) => {
 };
 
 export const logout = async (_req: Request, res: Response) => {
-  res.clearCookie(env.cookieName, {
-    httpOnly: true,
-    secure: env.nodeEnv === "production",
-    sameSite: "lax",
-    path: "/",
-  });
-
-  res.clearCookie(oauthStateCookieName, {
-    httpOnly: true,
-    secure: env.nodeEnv === "production",
-    sameSite: "lax",
-    path: "/api/auth/google/callback",
-  });
+  clearAuthCookie(res);
+  clearOAuthStateCookie(res);
 
   return res.status(200).json({
     success: true,
@@ -183,12 +201,7 @@ export const deleteAccount = async (req: Request, res: Response) => {
   });
 
   if (!user) {
-    res.clearCookie(env.cookieName, {
-      httpOnly: true,
-      secure: env.nodeEnv === "production",
-      sameSite: "lax",
-      path: "/",
-    });
+    clearAuthCookie(res);
 
     return res.status(401).json({
       success: false,
@@ -201,13 +214,8 @@ export const deleteAccount = async (req: Request, res: Response) => {
     where: { id: userId },
   });
 
-  // Clear the authentication cookie after successful deletion.
-  res.clearCookie(env.cookieName, {
-    httpOnly: true,
-    secure: env.nodeEnv === "production",
-    sameSite: "lax",
-    path: "/",
-  });
+  clearAuthCookie(res);
+  clearOAuthStateCookie(res);
 
   return res.status(200).json({
     success: true,

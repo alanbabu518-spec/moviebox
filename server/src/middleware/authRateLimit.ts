@@ -1,4 +1,6 @@
+import crypto from "node:crypto";
 import type { Request } from "express";
+
 import { tokenBucket } from "./tokenBucket.js";
 
 const getIp = (req: Request): string => req.ip ?? "unknown";
@@ -14,12 +16,12 @@ const getEmail = (req: Request): string => {
 const getTokenFingerprint = (req: Request): string => {
   const token = req.query.token;
 
-  if (typeof token !== "string" || token.length === 0) {
-    return "missing";
+  if (typeof token !== "string" || token.length === 0 || token.length > 2048) {
+    return "invalid";
   }
 
-  // Avoid using the complete authentication token as a rate-limit key.
-  return token.slice(0, 128);
+  // Store only a SHA-256 fingerprint, never the raw authentication token.
+  return crypto.createHash("sha256").update(token).digest("hex");
 };
 
 /**
