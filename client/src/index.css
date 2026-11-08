@@ -72,6 +72,7 @@ html {
     -webkit-text-size-adjust: 100%;
     overscroll-behavior: none; /* no pull-to-refresh / rubber band hijack */
     scroll-behavior: smooth;
+    overflow-x: clip; /* never let stray wide content scroll or shrink the page sideways */
   }
 
   body {
@@ -81,6 +82,7 @@ html {
     color: var(--text-primary);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
 
   /* One static, fixed glow layer: composited once, never repainted on scroll */

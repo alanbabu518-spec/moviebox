@@ -2,14 +2,35 @@
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Without this tag phones render the page at ~980px and shrink it ("desktop site") -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#08080b" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="MovieBox" />
     <meta property="og:description" content="Find what to watch next." />
-    <meta property="og:image" content="https://movie-box-gilt-seven.vercel.app//og-image.png" />
+    <meta
+      property="og:url"
+      content="https://movie-box-gilt-seven.vercel.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://movie-box-gilt-seven.vercel.app/og-image.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://movie-box-gilt-seven.vercel.app/og-image.png"
+    />
 
     <title>MovieBox</title>
 
