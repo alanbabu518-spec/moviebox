@@ -9,6 +9,12 @@ import Footer from "../shared/components/layout/Footer";
 import ProfileSetupModal from "../shared/components/auth/ProfileSetupModal";
 
 import type { Movie } from "../shared/types/movie";
+import {
+  readBrowserCache,
+  writeBrowserCache,
+} from "../shared/utils/browser-cache";
+
+import { getStaticHomeData } from "../shared/services/home-data";
 
 import {
   getPopularMovies,
@@ -55,17 +61,65 @@ function RailSkeleton() {
 }
 
 function Home() {
-  const [trending, setTrending] = useState<Movie[]>([]);
-  const [upcoming, setUpcoming] = useState<Movie[]>([]);
-  const [popular, setPopular] = useState<Movie[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Load previously cached public catalogue data immediately.
+  const [trending, setTrending] = useState<Movie[]>(
+    () => readBrowserCache<Movie[]>("home:trending") ?? [],
+  );
+
+  const [upcoming, setUpcoming] = useState<Movie[]>(
+    () => readBrowserCache<Movie[]>("home:upcoming") ?? [],
+  );
+
+  const [popular, setPopular] = useState<Movie[]>(
+    () => readBrowserCache<Movie[]>("home:popular") ?? [],
+  );
+
+  const [loading, setLoading] = useState(
+    () =>
+      !["home:trending", "home:upcoming", "home:popular"].some(
+        (key) => readBrowserCache<Movie[]>(key)?.length,
+      ),
+  );
 
   useEffect(() => {
     let mounted = true;
 
-    const load = async () => {
-      setLoading(true);
+    // Load the static Vercel snapshot first.
+    const loadStaticSnapshot = async () => {
+      const data = await getStaticHomeData();
 
+      if (!mounted || !data) return;
+
+      const staticTrending = mapMovies(data.trending);
+      const staticUpcoming = mapMovies(data.upcoming);
+      const staticPopular = mapMovies(data.popular);
+
+      if (staticTrending.length > 0) {
+        setTrending(staticTrending);
+        writeBrowserCache("home:trending", staticTrending);
+      }
+
+      if (staticUpcoming.length > 0) {
+        setUpcoming(staticUpcoming);
+        writeBrowserCache("home:upcoming", staticUpcoming);
+      }
+
+      if (staticPopular.length > 0) {
+        setPopular(staticPopular);
+        writeBrowserCache("home:popular", staticPopular);
+      }
+
+      if (
+        staticTrending.length > 0 ||
+        staticUpcoming.length > 0 ||
+        staticPopular.length > 0
+      ) {
+        setLoading(false);
+      }
+    };
+
+    // Refresh from the API in the background.
+    const refreshFromApi = async () => {
       const [trendingResult, upcomingResult, popularResult] =
         await Promise.allSettled([
           getTrendingMovies(),
@@ -73,32 +127,39 @@ function Home() {
           getPopularMovies(),
         ]);
 
-      if (!mounted) {
-        return;
+      if (!mounted) return;
+
+      if (trendingResult.status === "fulfilled") {
+        const movies = mapMovies(trendingResult.value.movies);
+        setTrending(movies);
+        writeBrowserCache("home:trending", movies);
       }
 
-      setTrending(
-        trendingResult.status === "fulfilled"
-          ? mapMovies(trendingResult.value.movies)
-          : [],
-      );
+      if (upcomingResult.status === "fulfilled") {
+        const movies = mapMovies(upcomingResult.value.movies);
+        setUpcoming(movies);
+        writeBrowserCache("home:upcoming", movies);
+      }
 
-      setUpcoming(
-        upcomingResult.status === "fulfilled"
-          ? mapMovies(upcomingResult.value.movies)
-          : [],
-      );
-
-      setPopular(
-        popularResult.status === "fulfilled"
-          ? mapMovies(popularResult.value.movies)
-          : [],
-      );
+      if (popularResult.status === "fulfilled") {
+        const movies = mapMovies(popularResult.value.movies);
+        setPopular(movies);
+        writeBrowserCache("home:popular", movies);
+      }
 
       setLoading(false);
     };
 
-    void load();
+    // Load static data before starting the potentially sleeping Render API.
+    const startLoading = async () => {
+      await loadStaticSnapshot();
+
+      if (mounted) {
+        void refreshFromApi();
+      }
+    };
+
+    void startLoading();
 
     return () => {
       mounted = false;

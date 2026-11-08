@@ -19,6 +19,8 @@ import {
 import { useAuth } from "../../context/AuthContext";
 import { useLibraryStore } from "../../../store/library.store";
 import { cn } from "../../lib/cn";
+import { getStaticHomeData } from "../../services/home-data";
+import { readBrowserCache, writeBrowserCache } from "../../utils/browser-cache";
 
 const INDUSTRIES: MovieIndustry[] = [
   "hollywood",
@@ -56,9 +58,23 @@ export default function Hero() {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
 
+  // Read cached featured movies immediately.
   const [picked, setPicked] = useState<
     Partial<Record<MovieIndustry, TMDBMovie>>
-  >({});
+  >(() => {
+    const cached: Partial<Record<MovieIndustry, TMDBMovie>> = {};
+
+    for (const industry of INDUSTRIES) {
+      const movie = readBrowserCache<TMDBMovie>(`home:hero:${industry}`);
+
+      if (movie) {
+        cached[industry] = movie;
+      }
+    }
+
+    return cached;
+  });
+
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [layers, setLayers] = useState<string[]>([]);
@@ -69,32 +85,82 @@ export default function Hero() {
 
   const swipeStart = useRef<number | null>(null);
 
-  /* Load one featured title per industry, one after another, so slide 1 shows immediately */
+  /*
+   * Load static hero movies first.
+   * Then refresh all six industries concurrently from the API.
+   */
   useEffect(() => {
     let cancelled = false;
 
-    const load = async () => {
-      for (const industry of INDUSTRIES) {
-        try {
+    const loadStaticSlides = async () => {
+      const data = await getStaticHomeData();
+
+      if (cancelled || !data) return;
+
+      setPicked((current) => {
+        const next = { ...current };
+
+        for (const industry of INDUSTRIES) {
+          const movie = data.hero[industry];
+
+          if (movie && hasImage(movie)) {
+            next[industry] = movie;
+
+            writeBrowserCache(`home:hero:${industry}`, movie);
+          }
+        }
+
+        return next;
+      });
+    };
+
+    const refreshSlides = async () => {
+      const results = await Promise.allSettled(
+        INDUSTRIES.map(async (industry) => {
           const list = (await getIndustryTrendingMovies(industry)).filter(
             hasImage,
           );
 
-          if (cancelled) {
-            return;
+          if (list.length === 0) {
+            return null;
           }
 
-          if (list.length > 0) {
-            const movie = pickRandom(list);
-            setPicked((current) => ({ ...current, [industry]: movie }));
+          const movie = pickRandom(list);
+
+          writeBrowserCache(`home:hero:${industry}`, movie);
+
+          return {
+            industry,
+            movie,
+          };
+        }),
+      );
+
+      if (cancelled) return;
+
+      setPicked((current) => {
+        const next = { ...current };
+
+        for (const result of results) {
+          if (result.status === "fulfilled" && result.value) {
+            next[result.value.industry] = result.value.movie;
           }
-        } catch {
-          /* skip this industry */
         }
+
+        return next;
+      });
+    };
+
+    // Avoid starting the Render requests before the static file is loaded.
+    const startLoading = async () => {
+      await loadStaticSlides();
+
+      if (!cancelled) {
+        void refreshSlides();
       }
     };
 
-    void load();
+    void startLoading();
 
     return () => {
       cancelled = true;
@@ -124,7 +190,7 @@ export default function Hero() {
 
   const src = active ? backdropOf(active.movie) : null;
 
-  /* Preload, then crossfade (keep only the previous + current layer) */
+  // Preload the image before displaying it.
   useEffect(() => {
     if (!src) {
       return;
@@ -202,8 +268,12 @@ export default function Hero() {
       aria-roledescription="carousel"
       aria-label="Featured movies"
       style={{ touchAction: "pan-y" }}
-      onPointerEnter={(event) => event.pointerType === "mouse" && setPaused(true)}
-      onPointerLeave={(event) => event.pointerType === "mouse" && setPaused(false)}
+      onPointerEnter={(event) =>
+        event.pointerType === "mouse" && setPaused(true)
+      }
+      onPointerLeave={(event) =>
+        event.pointerType === "mouse" && setPaused(false)
+      }
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
       onPointerCancel={() => (swipeStart.current = null)}
@@ -226,6 +296,7 @@ export default function Hero() {
         ))}
       </div>
 
+      {/* Gradient overlay */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.55)_38%,rgba(0,0,0,0.1)_75%),linear-gradient(180deg,rgba(0,0,0,0.55)_0%,transparent_26%,transparent_52%,var(--background)_100%)]"
@@ -275,9 +346,7 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              onClick={() =>
-                requireAuth(() => navigate(`/movie/${movie.id}`))
-              }
+              onClick={() => requireAuth(() => navigate(`/movie/${movie.id}`))}
               className="inline-flex h-11 items-center gap-2 rounded-xl bg-brand px-6 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_var(--primary)] transition-[transform,background-color] duration-150 hover:bg-brand-hover active:scale-95"
             >
               <Play size={16} fill="currentColor" strokeWidth={0} />
@@ -327,7 +396,7 @@ export default function Hero() {
             </button>
           </div>
 
-          {/* Progress: the active bar advances the slide when its animation ends */}
+          {/* Progress indicators */}
           {slides.length > 1 && (
             <div
               role="tablist"
@@ -346,7 +415,9 @@ export default function Hero() {
                 >
                   <span className="block h-1 w-full overflow-hidden rounded-full bg-white/25">
                     <span
-                      onAnimationEnd={() => !reduceMotion && goTo(safeIndex + 1)}
+                      onAnimationEnd={() =>
+                        !reduceMotion && goTo(safeIndex + 1)
+                      }
                       style={{
                         animationPlayState: paused ? "paused" : "running",
                       }}
@@ -366,7 +437,7 @@ export default function Hero() {
           )}
         </div>
 
-        {/* Desktop: poster strip + arrows */}
+        {/* Desktop poster strip and navigation arrows */}
         {slides.length > 1 && (
           <div className="hidden shrink-0 flex-col items-center gap-3 lg:flex">
             {slides.map((slide, i) => (
