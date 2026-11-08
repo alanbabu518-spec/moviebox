@@ -29,6 +29,7 @@ import {
 import { useAuth } from "../../context/AuthContext";
 import { useThemeStore } from "../../../store/theme.store";
 import { cn } from "../../lib/cn";
+import Logo from "./Logo";
 
 interface NavbarProps {
   /** Transparent over a full-bleed hero until the page scrolls */
@@ -372,9 +373,9 @@ export default function Navbar({ overlay = false }: NavbarProps) {
           <Link
             to="/"
             aria-label="MovieBox home"
-            className="shrink-0 font-display text-xl font-extrabold tracking-tight text-white"
+            className="shrink-0 transition-opacity active:opacity-60"
           >
-            Movie<span className="text-brand">Box</span>
+            <Logo size={34} tone="dark" />
           </Link>
 
           {/* Desktop navigation */}

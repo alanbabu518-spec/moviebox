@@ -1,9 +1,6 @@
-import {
-  AnimatePresence,
-  motion,
-  type Variants,
-} from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
+import Logo from "../layout/Logo";
 
 interface ErrorPageProps {
   statusCode?: number;
@@ -47,8 +44,7 @@ const errorContent: Record<number, ErrorContent> = {
   },
   502: {
     title: "Bad gateway!",
-    message:
-      "MovieBox received an unexpected response. Please try again.",
+    message: "MovieBox received an unexpected response. Please try again.",
   },
   503: {
     title: "Temporarily unavailable!",
@@ -56,8 +52,7 @@ const errorContent: Record<number, ErrorContent> = {
   },
   504: {
     title: "Gateway timed out!",
-    message:
-      "The service took too long to respond. Please try again.",
+    message: "The service took too long to respond. Please try again.",
   },
 };
 
@@ -155,8 +150,7 @@ export default function ErrorPage({
 }: ErrorPageProps) {
   const defaults = errorContent[statusCode] ?? {
     title: "Something went wrong!",
-    message:
-      "We couldn't complete your request. Please try again.",
+    message: "We couldn't complete your request. Please try again.",
   };
 
   const isNotFound = statusCode === 404;
@@ -278,14 +272,15 @@ export default function ErrorPage({
           </motion.div>
 
           {/* Footer */}
-          <motion.p
+          <motion.div
             variants={itemVariants}
-            className="mt-12 text-xs tracking-widest text-zinc-600"
+            className="mt-12 flex flex-col items-center gap-4"
           >
-            MOVIEBOX
-            <span className="mx-2 text-zinc-700">·</span>
-            EVERY STORY STARTS SOMEWHERE
-          </motion.p>
+            <Logo size={64} tone="dark" />
+            <p className="text-xs tracking-[0.2em] text-zinc-600">
+              EVERY STORY STARTS SOMEWHERE
+            </p>
+          </motion.div>
         </motion.section>
       </AnimatePresence>
     </main>

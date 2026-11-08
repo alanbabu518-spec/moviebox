@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Film } from "lucide-react";
+import Logo from "./Logo";
 
 interface AuthLayoutProps {
   children: ReactNode;
@@ -67,11 +68,7 @@ export default function AuthLayout({
                   backgroundColor: "var(--primary)",
                 }}
               >
-                <Film
-                  size={20}
-                  strokeWidth={2.2}
-                  className="text-white"
-                />
+                <Film size={20} strokeWidth={2.2} className="text-white" />
               </div>
 
               <span className="font-display text-xl font-bold tracking-tight text-white">
@@ -81,18 +78,7 @@ export default function AuthLayout({
           </div>
 
           <div className="absolute bottom-16 left-7 z-10 hidden max-w-xl sm:left-10 lg:block">
-            <div className="mb-4 flex items-center gap-2">
-              <span
-                className="h-1.5 w-1.5 rounded-full"
-                style={{
-                  backgroundColor: "var(--primary)",
-                }}
-              />
-
-              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/55">
-                MovieBox
-              </span>
-            </div>
+            <Logo tone="dark" className="mb-5 h-10" />
 
             <h1 className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl xl:text-5xl">
               Movies worth watching.
@@ -101,8 +87,7 @@ export default function AuthLayout({
             </h1>
 
             <p className="mt-4 max-w-lg text-sm leading-6 text-white/60">
-              Discover movies, build your watchlist and find your next
-              favorite.
+              Discover movies, build your watchlist and find your next favorite.
             </p>
           </div>
         </section>
@@ -115,8 +100,7 @@ export default function AuthLayout({
                 backgroundColor:
                   "color-mix(in srgb, var(--surface) 94%, transparent)",
                 borderColor: "var(--border)",
-                boxShadow:
-                  "0 25px 80px rgba(0,0,0,0.45)",
+                boxShadow: "0 25px 80px rgba(0,0,0,0.45)",
               }}
             >
               <div className="mb-7">

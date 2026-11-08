@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useThemeStore } from "../../../store/theme.store";
 import { cn } from "../../lib/cn";
+import Logo from "./Logo";
 
 interface FooterLink {
   label: string;
@@ -74,7 +75,9 @@ export default function Footer() {
   };
 
   const backToTop = () => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   };
@@ -95,9 +98,9 @@ export default function Footer() {
           <Link
             to="/"
             aria-label="MovieBox home"
-            className="inline-block font-display text-2xl font-extrabold tracking-tight active:opacity-60"
+            className="inline-block active:opacity-60"
           >
-            Movie<span className="text-brand">Box</span>
+            <Logo size={44} />
           </Link>
 
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
