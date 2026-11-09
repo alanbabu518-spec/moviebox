@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T13:44:07.663Z",
+  "generatedAt": "2026-11-09T08:46:26.787Z",
   "trending": [
     {
       "id": 1423191,
@@ -9,9 +9,9 @@
       "poster_path": "/gAgWJhUSQWCgtKR8170nMkYlBda.jpg",
       "backdrop_path": "/3icyRAqgakNcQn6aDVz9libFmBA.jpg",
       "release_date": "2026-09-16",
-      "vote_average": 7.444,
-      "vote_count": 1744,
-      "popularity": 584.1726,
+      "vote_average": 7.495,
+      "vote_count": 1862,
+      "popularity": 695.1234,
       "original_language": "en",
       "genre_ids": [
         27,
@@ -32,9 +32,9 @@
       "poster_path": "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
       "backdrop_path": "/iDiTY1wA35YWzTmXLTtqaxtN6tc.jpg",
       "release_date": "2026-07-15",
-      "vote_average": 8.018,
-      "vote_count": 4410,
-      "popularity": 328.2263,
+      "vote_average": 8,
+      "vote_count": 4470,
+      "popularity": 418.3764,
       "original_language": "en",
       "genre_ids": [
         12,
@@ -55,9 +55,9 @@
       "poster_path": "/6sYemVUn79UPKz1ZsSG6kPU4RVy.jpg",
       "backdrop_path": "/kpqsljPQtWqPKJBTAEtoXtQZ9Ko.jpg",
       "release_date": "2026-09-19",
-      "vote_average": 7.3,
-      "vote_count": 479,
-      "popularity": 301.412,
+      "vote_average": 7.29,
+      "vote_count": 517,
+      "popularity": 410.9194,
       "original_language": "en",
       "genre_ids": [
         12,
@@ -69,6 +69,29 @@
       ]
     },
     {
+      "id": 1375441,
+      "title": "Primetime",
+      "original_title": "Primetime",
+      "overview": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history. When a high stakes operation goes fatally wrong, his veneered dream of fame curdles into a nightmare of performative justice.",
+      "poster_path": "/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
+      "backdrop_path": "/sEsMwSDUWGIx9EfNxzM6KzVSsSQ.jpg",
+      "release_date": "2026-09-23",
+      "vote_average": 6.8,
+      "vote_count": 386,
+      "popularity": 110.5793,
+      "original_language": "en",
+      "genre_ids": [
+        53,
+        18,
+        80
+      ],
+      "genres": [
+        "Thriller",
+        "Drama",
+        "Crime"
+      ]
+    },
+    {
       "id": 1792170,
       "title": "Model Citizen",
       "original_title": "Model Citizen",
@@ -76,9 +99,9 @@
       "poster_path": "/7SE0LBwgqiqZzkm9gKVbBAbcNQL.jpg",
       "backdrop_path": "/5MBdRdiGv3AKzZDGbni88xc6JFi.jpg",
       "release_date": "2026-11-03",
-      "vote_average": 6.529,
-      "vote_count": 17,
-      "popularity": 42.1148,
+      "vote_average": 6.8,
+      "vote_count": 21,
+      "popularity": 47.6557,
       "original_language": "en",
       "genre_ids": [
         80,
@@ -92,27 +115,6 @@
       ]
     },
     {
-      "id": 1375441,
-      "title": "Primetime",
-      "original_title": "Primetime",
-      "overview": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history. When a high stakes operation goes fatally wrong, his veneered dream of fame curdles into a nightmare of performative justice.",
-      "poster_path": "/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
-      "backdrop_path": "/sEsMwSDUWGIx9EfNxzM6KzVSsSQ.jpg",
-      "release_date": "2026-09-23",
-      "vote_average": 6.81,
-      "vote_count": 358,
-      "popularity": 109.6646,
-      "original_language": "en",
-      "genre_ids": [
-        53,
-        18
-      ],
-      "genres": [
-        "Thriller",
-        "Drama"
-      ]
-    },
-    {
       "id": 1381071,
       "title": "Godzilla Minus Zero",
       "original_title": "ゴジラ-0.0",
@@ -120,9 +122,9 @@
       "poster_path": "/hSmIJluOJmTWvJs4d7kHRxjc8s8.jpg",
       "backdrop_path": "/oqrYIDH4tvfEzPe1yqT4jzmAWHQ.jpg",
       "release_date": "2026-11-03",
-      "vote_average": 8.071,
-      "vote_count": 84,
-      "popularity": 187.1271,
+      "vote_average": 8,
+      "vote_count": 109,
+      "popularity": 200.2939,
       "original_language": "ja",
       "genre_ids": [
         878,
@@ -136,27 +138,6 @@
       ]
     },
     {
-      "id": 1294189,
-      "title": "The Mongoose",
-      "original_title": "The Mongoose",
-      "overview": "A falsely accused war hero with nothing to lose leads police on an epic televised cross-country car chase, helped by members of his former Special Forces Army battalion and closely monitored by a fascinated public rooting for his safe getaway.",
-      "poster_path": "/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg",
-      "backdrop_path": "/bySCyjQXNPgsnLTlgJpSMnRazPD.jpg",
-      "release_date": "2026-10-29",
-      "vote_average": 5.795,
-      "vote_count": 83,
-      "popularity": 203.679,
-      "original_language": "en",
-      "genre_ids": [
-        28,
-        53
-      ],
-      "genres": [
-        "Action",
-        "Thriller"
-      ]
-    },
-    {
       "id": 656908,
       "title": "Ramayana: Rise of a Legend",
       "original_title": "रामायणम्",
@@ -164,9 +145,9 @@
       "poster_path": "/dPrtk4iNf6T5w8fWfg4uxDDbJSW.jpg",
       "backdrop_path": "/yHVZncPRZr63mezRX20IyKLrSkv.jpg",
       "release_date": "2026-11-05",
-      "vote_average": 7.8,
-      "vote_count": 19,
-      "popularity": 141.8362,
+      "vote_average": 7.5,
+      "vote_count": 22,
+      "popularity": 153.5361,
       "original_language": "hi",
       "genre_ids": [
         14,
@@ -180,6 +161,27 @@
       ]
     },
     {
+      "id": 1294189,
+      "title": "The Mongoose",
+      "original_title": "The Mongoose",
+      "overview": "A falsely accused war hero with nothing to lose leads police on an epic televised cross-country car chase, helped by members of his former Special Forces Army battalion and closely monitored by a fascinated public rooting for his safe getaway.",
+      "poster_path": "/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg",
+      "backdrop_path": "/bySCyjQXNPgsnLTlgJpSMnRazPD.jpg",
+      "release_date": "2026-10-29",
+      "vote_average": 5.622,
+      "vote_count": 94,
+      "popularity": 203.4978,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
       "id": 1483525,
       "title": "Possible Love",
       "original_title": "가능한 사랑",
@@ -187,149 +189,17 @@
       "poster_path": "/1ERGPNiKtnEcsvJS1ywsmqmcIDO.jpg",
       "backdrop_path": "/k0BY5D4Ya6NHhsvNYMmaabpvUtS.jpg",
       "release_date": "2026-09-23",
-      "vote_average": 7.629,
-      "vote_count": 31,
-      "popularity": 57.4055,
+      "vote_average": 7.6,
+      "vote_count": 42,
+      "popularity": 59.6353,
       "original_language": "ko",
       "genre_ids": [
-        18
+        18,
+        10749
       ],
       "genres": [
-        "Drama"
-      ]
-    },
-    {
-      "id": 1384216,
-      "title": "The Dog Stars",
-      "original_title": "The Dog Stars",
-      "overview": "After the world's population has been ravaged by a pandemic, a man lives a lonesome existence in a Colorado airplane hangar with his dog and a dour gunman he has befriended. When a mysterious transmission comes through on the radio while he’s flying his old Cessna, it sparks a hunt for the provenance of the sound.",
-      "poster_path": "/5O616X9vmRzQdB68PHzBewPittd.jpg",
-      "backdrop_path": "/3k7GzxOdLZkN3eZsuhLi2eRzkXO.jpg",
-      "release_date": "2026-08-26",
-      "vote_average": 7.199,
-      "vote_count": 920,
-      "popularity": 74.4521,
-      "original_language": "en",
-      "genre_ids": [
-        28,
-        53,
-        878
-      ],
-      "genres": [
-        "Action",
-        "Thriller",
-        "Science Fiction"
-      ]
-    },
-    {
-      "id": 1570488,
-      "title": "A Dog's Perfect Christmas",
-      "original_title": "A Dog's Perfect Christmas",
-      "overview": "When a medical emergency pulls the Goss family apart, determined dog Winstead will do all he can to bring his humans back together before Christmas Eve.",
-      "poster_path": "/zvsNAohDHRWcGvbPSD7r3WojpKb.jpg",
-      "backdrop_path": "/hhQT0TySg3LXCE8BEPpfPJ5zJA2.jpg",
-      "release_date": "2026-11-04",
-      "vote_average": 8.2,
-      "vote_count": 22,
-      "popularity": 123.9973,
-      "original_language": "en",
-      "genre_ids": [
-        35,
-        18
-      ],
-      "genres": [
-        "Comedy",
-        "Drama"
-      ]
-    },
-    {
-      "id": 1400940,
-      "title": "Clayface",
-      "original_title": "Clayface",
-      "overview": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
-      "poster_path": "/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
-      "backdrop_path": "/xSDoxv4pHvs4xZjvTb0Iqg1A6ro.jpg",
-      "release_date": "2026-10-19",
-      "vote_average": 7.449,
-      "vote_count": 403,
-      "popularity": 91.3161,
-      "original_language": "en",
-      "genre_ids": [
-        27,
-        53,
-        878
-      ],
-      "genres": [
-        "Horror",
-        "Thriller",
-        "Science Fiction"
-      ]
-    },
-    {
-      "id": 1283515,
-      "title": "Verity",
-      "original_title": "Verity",
-      "overview": "Lowen Ashleigh, hired to ghostwrite for best-selling author Verity Crawford, uncovers Verity's autobiographical notes, and becomes involved in what may prove to be a lethal conspiracy.",
-      "poster_path": "/rmaNMA1seHqpjtnYKzyynFAr1g8.jpg",
-      "backdrop_path": "/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
-      "release_date": "2026-09-30",
-      "vote_average": 6.965,
-      "vote_count": 626,
-      "popularity": 182.2259,
-      "original_language": "en",
-      "genre_ids": [
-        9648,
-        53
-      ],
-      "genres": [
-        "Mystery",
-        "Thriller"
-      ]
-    },
-    {
-      "id": 1507696,
-      "title": "Apocalypse Z: New World",
-      "original_title": "Apocalipsis Z: Nuevo mundo",
-      "overview": "The Canary Islands have become Europe’s last refuge following the outbreak of the TSJ virus. When a special mission sets out for the mainland in search of vital supplies, Roberto joins the team with questionable intentions. The dangerous operation turns into a desperate race for survival, and Roberto and his companions find themselves caught between hordes of infected and divided loyalties.",
-      "poster_path": "/wXln4DUrwcyjcFPwgQxFPYTlG1Z.jpg",
-      "backdrop_path": "/o3XwuDUj0n8qnK91p6q8LKfr6rj.jpg",
-      "release_date": "2026-10-09",
-      "vote_average": 6.061,
-      "vote_count": 147,
-      "popularity": 392.0758,
-      "original_language": "es",
-      "genre_ids": [
-        28,
-        53,
-        27
-      ],
-      "genres": [
-        "Action",
-        "Thriller",
-        "Horror"
-      ]
-    },
-    {
-      "id": 1003596,
-      "title": "Avengers: Doomsday",
-      "original_title": "Avengers: Doomsday",
-      "overview": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
-      "poster_path": "/jzPwsojjFStf5lR5Nm07w2hH56G.jpg",
-      "backdrop_path": "/rObL4of4eFA8yWaN9pRFo9aOVNi.jpg",
-      "release_date": "2026-12-16",
-      "vote_average": 0,
-      "vote_count": 0,
-      "popularity": 88.8729,
-      "original_language": "en",
-      "genre_ids": [
-        878,
-        28,
-        12
-      ],
-      "genres": [
-        "Science Fiction",
-        "Action",
-        "Adventure"
+        "Drama",
+        "Romance"
       ]
     },
     {
@@ -341,8 +211,8 @@
       "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
       "release_date": "2026-10-19",
       "vote_average": 8.5,
-      "vote_count": 224,
-      "popularity": 303.6913,
+      "vote_count": 235,
+      "popularity": 164.3955,
       "original_language": "en",
       "genre_ids": [
         16,
@@ -356,6 +226,73 @@
       ]
     },
     {
+      "id": 1283515,
+      "title": "Verity",
+      "original_title": "Verity",
+      "overview": "Lowen Ashleigh, hired to ghostwrite for best-selling author Verity Crawford, uncovers Verity's autobiographical notes, and becomes involved in what may prove to be a lethal conspiracy.",
+      "poster_path": "/rmaNMA1seHqpjtnYKzyynFAr1g8.jpg",
+      "backdrop_path": "/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
+      "release_date": "2026-09-30",
+      "vote_average": 7.002,
+      "vote_count": 647,
+      "popularity": 190.1577,
+      "original_language": "en",
+      "genre_ids": [
+        9648,
+        53
+      ],
+      "genres": [
+        "Mystery",
+        "Thriller"
+      ]
+    },
+    {
+      "id": 1400940,
+      "title": "Clayface",
+      "original_title": "Clayface",
+      "overview": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
+      "poster_path": "/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
+      "backdrop_path": "/uL4cIrNi2uaUnWIOQQ28EVnkETG.jpg",
+      "release_date": "2026-10-19",
+      "vote_average": 7.4,
+      "vote_count": 408,
+      "popularity": 89.2804,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        53,
+        878
+      ],
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Science Fiction"
+      ]
+    },
+    {
+      "id": 1003596,
+      "title": "Avengers: Doomsday",
+      "original_title": "Avengers: Doomsday",
+      "overview": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
+      "poster_path": "/9jlZ59UALLLOE279HMT19rP9XQs.jpg",
+      "backdrop_path": "/rObL4of4eFA8yWaN9pRFo9aOVNi.jpg",
+      "release_date": "2026-12-16",
+      "vote_average": 0,
+      "vote_count": 0,
+      "popularity": 86.8559,
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        28,
+        12
+      ],
+      "genres": [
+        "Science Fiction",
+        "Action",
+        "Adventure"
+      ]
+    },
+    {
       "id": 1813355,
       "title": "A Story of Derry",
       "original_title": "A Story of Derry",
@@ -363,9 +300,9 @@
       "poster_path": "/4PtzGcegF5Po1NmDAW9IklyvAUh.jpg",
       "backdrop_path": "/8vky6e0D4dSZMlxHWXBIRRFP1Pb.jpg",
       "release_date": "2026-10-31",
-      "vote_average": 7,
-      "vote_count": 84,
-      "popularity": 292.6019,
+      "vote_average": 6.858,
+      "vote_count": 95,
+      "popularity": 342.6898,
       "original_language": "en",
       "genre_ids": [
         18,
@@ -379,47 +316,47 @@
       ]
     },
     {
-      "id": 1571955,
-      "title": "Collision Course",
-      "original_title": "Colisión",
-      "overview": "Spain, 2013. After robbing a bank, a getaway crash reveals the hidden side of each thief, exposing betrayals and lies that began long before the heist.",
-      "poster_path": "/s2eAK0uiODjlNUSIiOBwdp3at2u.jpg",
-      "backdrop_path": "/uI3kWI7kGW5E0F8WduewgQYPt34.jpg",
-      "release_date": "2026-10-30",
-      "vote_average": 6.473,
-      "vote_count": 73,
-      "popularity": 127.0396,
-      "original_language": "es",
+      "id": 969681,
+      "title": "Spider-Man: Brand New Day",
+      "original_title": "Spider-Man: Brand New Day",
+      "overview": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
+      "poster_path": "/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
+      "backdrop_path": "/subj7knTn4DeS6KS7qI66EQKe9i.jpg",
+      "release_date": "2026-07-29",
+      "vote_average": 8.479,
+      "vote_count": 6637,
+      "popularity": 389.122,
+      "original_language": "en",
       "genre_ids": [
-        53,
-        18,
-        80
+        878,
+        28,
+        12
       ],
       "genres": [
-        "Thriller",
-        "Drama",
-        "Crime"
+        "Science Fiction",
+        "Action",
+        "Adventure"
       ]
     },
     {
-      "id": 1339713,
-      "title": "Obsession",
-      "original_title": "Obsession",
-      "overview": "After breaking the mysterious \"One Wish Willow\" to win his crush's heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
-      "poster_path": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
-      "backdrop_path": "/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
-      "release_date": "2026-05-13",
-      "vote_average": 8.2,
-      "vote_count": 6539,
-      "popularity": 88.8774,
+      "id": 1570488,
+      "title": "A Dog's Perfect Christmas",
+      "original_title": "A Dog's Perfect Christmas",
+      "overview": "When a medical emergency pulls the Goss family apart, determined dog Winstead will do all he can to bring his humans back together before Christmas Eve.",
+      "poster_path": "/zvsNAohDHRWcGvbPSD7r3WojpKb.jpg",
+      "backdrop_path": "/hhQT0TySg3LXCE8BEPpfPJ5zJA2.jpg",
+      "release_date": "2026-11-04",
+      "vote_average": 7.9,
+      "vote_count": 29,
+      "popularity": 130.448,
       "original_language": "en",
       "genre_ids": [
-        27,
-        53
+        35,
+        18
       ],
       "genres": [
-        "Horror",
-        "Thriller"
+        "Comedy",
+        "Drama"
       ]
     },
     {
@@ -430,9 +367,9 @@
       "poster_path": "/dNJFRtVg3xLQ7dbNIQ55cmmIniD.jpg",
       "backdrop_path": "/3uLA0ujne91bkzFStZICCYeqhnt.jpg",
       "release_date": "2026-10-30",
-      "vote_average": 8.125,
-      "vote_count": 72,
-      "popularity": 60.1982,
+      "vote_average": 8.109,
+      "vote_count": 96,
+      "popularity": 65.0724,
       "original_language": "en",
       "genre_ids": [
         35,
@@ -444,32 +381,80 @@
         "Crime",
         "Thriller"
       ]
-    }
-  ],
-  "upcoming": [
+    },
     {
-      "id": 791523,
-      "title": "Wildwood",
-      "original_title": "Wildwood",
-      "overview": "Prue and her classmate Curtis are drawn into a magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to rescue Prue's abducted baby brother from a murder of crows led by a mysterious woman named Alexandra.",
-      "poster_path": "/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
-      "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
-      "release_date": "2026-10-19",
-      "vote_average": 8.498,
-      "vote_count": 223,
-      "popularity": 303.6913,
+      "id": 1117898,
+      "title": "The Cat in the Hat",
+      "original_title": "The Cat in the Hat",
+      "overview": "Assigned his toughest mission yet, the Cat must cheer up siblings Gabby and Sebastian as they adjust to life in a new town. Known for pushing boundaries, this agent of chaos must prove himself or risk losing his magical hat forever.",
+      "poster_path": "/mWN6knIVJ2o7eGwSm7mOgSCwNUc.jpg",
+      "backdrop_path": "/9y9o686DsQg0KzPtERzcW7Cf8IE.jpg",
+      "release_date": "2026-10-31",
+      "vote_average": 7.059,
+      "vote_count": 17,
+      "popularity": 63.5942,
       "original_language": "en",
       "genre_ids": [
         16,
+        14,
         12,
-        14
+        10751,
+        35
       ],
       "genres": [
         "Animation",
+        "Fantasy",
         "Adventure",
-        "Fantasy"
+        "Family",
+        "Comedy"
       ]
     },
+    {
+      "id": 1507696,
+      "title": "Apocalypse Z: New World",
+      "original_title": "Apocalipsis Z: Nuevo mundo",
+      "overview": "The Canary Islands have become Europe’s last refuge following the outbreak of the TSJ virus. When a special mission sets out for the mainland in search of vital supplies, Roberto joins the team with questionable intentions. The dangerous operation turns into a desperate race for survival, and Roberto and his companions find themselves caught between hordes of infected and divided loyalties.",
+      "poster_path": "/wXln4DUrwcyjcFPwgQxFPYTlG1Z.jpg",
+      "backdrop_path": "/o3XwuDUj0n8qnK91p6q8LKfr6rj.jpg",
+      "release_date": "2026-10-09",
+      "vote_average": 6.104,
+      "vote_count": 163,
+      "popularity": 407.3366,
+      "original_language": "es",
+      "genre_ids": [
+        28,
+        53,
+        27
+      ],
+      "genres": [
+        "Action",
+        "Thriller",
+        "Horror"
+      ]
+    },
+    {
+      "id": 1339713,
+      "title": "Obsession",
+      "original_title": "Obsession",
+      "overview": "After breaking the mysterious \"One Wish Willow\" to win his crush's heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+      "poster_path": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+      "backdrop_path": "/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
+      "release_date": "2026-05-13",
+      "vote_average": 8.168,
+      "vote_count": 6555,
+      "popularity": 87.836,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "genres": [
+        "Horror",
+        "Thriller"
+      ]
+    }
+  ],
+  "upcoming": [
     {
       "id": 1058424,
       "title": "Hope",
@@ -478,9 +463,9 @@
       "poster_path": "/6VY1ZKgpsc8CfGsQcCGiYEgHdH0.jpg",
       "backdrop_path": "/j96rurZqmBjyY37Fncl3IB0qJNe.jpg",
       "release_date": "2026-07-15",
-      "vote_average": 6.744,
-      "vote_count": 516,
-      "popularity": 371.1303,
+      "vote_average": 6.721,
+      "vote_count": 533,
+      "popularity": 396.0525,
       "original_language": "ko",
       "genre_ids": [
         878,
@@ -494,6 +479,29 @@
       ]
     },
     {
+      "id": 791523,
+      "title": "Wildwood",
+      "original_title": "Wildwood",
+      "overview": "Prue and her classmate Curtis are drawn into a magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to rescue Prue's abducted baby brother from a murder of crows led by a mysterious woman named Alexandra.",
+      "poster_path": "/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
+      "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+      "release_date": "2026-10-19",
+      "vote_average": 8.524,
+      "vote_count": 233,
+      "popularity": 164.3955,
+      "original_language": "en",
+      "genre_ids": [
+        16,
+        12,
+        14
+      ],
+      "genres": [
+        "Animation",
+        "Adventure",
+        "Fantasy"
+      ]
+    },
+    {
       "id": 1294189,
       "title": "The Mongoose",
       "original_title": "The Mongoose",
@@ -501,9 +509,9 @@
       "poster_path": "/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg",
       "backdrop_path": "/bySCyjQXNPgsnLTlgJpSMnRazPD.jpg",
       "release_date": "2026-10-29",
-      "vote_average": 5.815,
-      "vote_count": 81,
-      "popularity": 203.679,
+      "vote_average": 5.612,
+      "vote_count": 94,
+      "popularity": 203.4978,
       "original_language": "en",
       "genre_ids": [
         28,
@@ -515,25 +523,6 @@
       ]
     },
     {
-      "id": 1101412,
-      "title": "Fall 2: Deadpoint",
-      "original_title": "Fall 2: Deadpoint",
-      "overview": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
-      "poster_path": "/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
-      "backdrop_path": "/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
-      "release_date": "2026-09-01",
-      "vote_average": 7.294,
-      "vote_count": 753,
-      "popularity": 160.6614,
-      "original_language": "en",
-      "genre_ids": [
-        53
-      ],
-      "genres": [
-        "Thriller"
-      ]
-    },
-    {
       "id": 1381071,
       "title": "Godzilla Minus Zero",
       "original_title": "ゴジラ-0.0",
@@ -541,9 +530,9 @@
       "poster_path": "/hSmIJluOJmTWvJs4d7kHRxjc8s8.jpg",
       "backdrop_path": "/oqrYIDH4tvfEzPe1yqT4jzmAWHQ.jpg",
       "release_date": "2026-11-03",
-      "vote_average": 8.1,
-      "vote_count": 81,
-      "popularity": 187.1271,
+      "vote_average": 8,
+      "vote_count": 107,
+      "popularity": 200.2939,
       "original_language": "ja",
       "genre_ids": [
         878,
@@ -557,6 +546,25 @@
       ]
     },
     {
+      "id": 1101412,
+      "title": "Fall 2: Deadpoint",
+      "original_title": "Fall 2: Deadpoint",
+      "overview": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
+      "poster_path": "/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
+      "backdrop_path": "/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
+      "release_date": "2026-09-01",
+      "vote_average": 7.29,
+      "vote_count": 756,
+      "popularity": 165.1921,
+      "original_language": "en",
+      "genre_ids": [
+        53
+      ],
+      "genres": [
+        "Thriller"
+      ]
+    },
+    {
       "id": 1422041,
       "title": "La Bola Negra",
       "original_title": "La bola negra",
@@ -564,9 +572,9 @@
       "poster_path": "/7HwFQTMghL6HOvzEnXYUvyuZXeh.jpg",
       "backdrop_path": "/bDsmYvrzto7xrEwqDpLC3SPhn9A.jpg",
       "release_date": "2026-09-25",
-      "vote_average": 8.1,
-      "vote_count": 188,
-      "popularity": 143.0987,
+      "vote_average": 8.064,
+      "vote_count": 194,
+      "popularity": 152.4349,
       "original_language": "es",
       "genre_ids": [
         18,
@@ -578,29 +586,6 @@
       ]
     },
     {
-      "id": 1514026,
-      "title": "Buddy",
-      "original_title": "Buddy",
-      "overview": "Inside the colorful world of \"It's Buddy!\", a group of children spend their days singing, dancing, and helping Buddy - bright orange unicorn - spread happiness. But when one child refuses to play along, Buddy is not pleased and cracks begin to appear in this seemingly perfect world.",
-      "poster_path": "/1BdZbNvl1SfrrX8J9X5tQzN6Ivu.jpg",
-      "backdrop_path": "/sMmG82PtjK8A9rVc34gwKQtCm3A.jpg",
-      "release_date": "2026-08-27",
-      "vote_average": 6.908,
-      "vote_count": 256,
-      "popularity": 140.4166,
-      "original_language": "en",
-      "genre_ids": [
-        27,
-        35,
-        14
-      ],
-      "genres": [
-        "Horror",
-        "Comedy",
-        "Fantasy"
-      ]
-    },
-    {
       "id": 656908,
       "title": "Ramayana: Rise of a Legend",
       "original_title": "रामायणम्",
@@ -608,9 +593,9 @@
       "poster_path": "/dPrtk4iNf6T5w8fWfg4uxDDbJSW.jpg",
       "backdrop_path": "/yHVZncPRZr63mezRX20IyKLrSkv.jpg",
       "release_date": "2026-11-05",
-      "vote_average": 7.8,
-      "vote_count": 19,
-      "popularity": 141.8362,
+      "vote_average": 7.5,
+      "vote_count": 22,
+      "popularity": 153.5361,
       "original_language": "hi",
       "genre_ids": [
         14,
@@ -624,6 +609,29 @@
       ]
     },
     {
+      "id": 1514026,
+      "title": "Buddy",
+      "original_title": "Buddy",
+      "overview": "Inside the colorful world of \"It's Buddy!\", a group of children spend their days singing, dancing, and helping Buddy - bright orange unicorn - spread happiness. But when one child refuses to play along, Buddy is not pleased and cracks begin to appear in this seemingly perfect world.",
+      "poster_path": "/1BdZbNvl1SfrrX8J9X5tQzN6Ivu.jpg",
+      "backdrop_path": "/sMmG82PtjK8A9rVc34gwKQtCm3A.jpg",
+      "release_date": "2026-08-27",
+      "vote_average": 6.909,
+      "vote_count": 258,
+      "popularity": 141.9364,
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        35,
+        14
+      ],
+      "genres": [
+        "Horror",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
       "id": 1244523,
       "title": "Beware Boiúna",
       "original_title": "Beware Boiúna",
@@ -631,9 +639,9 @@
       "poster_path": "/uW5YMPxJUzT9bkafrCKHXjPTCoQ.jpg",
       "backdrop_path": "/9nU0FKNefmhbgi2xXlvZchZsqwm.jpg",
       "release_date": "2026-10-01",
-      "vote_average": 6.238,
-      "vote_count": 42,
-      "popularity": 132.3954,
+      "vote_average": 6.2,
+      "vote_count": 46,
+      "popularity": 153.7159,
       "original_language": "en",
       "genre_ids": [
         27,
@@ -654,9 +662,9 @@
       "poster_path": "/hJNdizFlxOW89edX3Rzr6OliSFI.jpg",
       "backdrop_path": "/7RsPdXLDNugDIlwXPVeeprNfMx.jpg",
       "release_date": "2026-07-22",
-      "vote_average": 6.401,
-      "vote_count": 162,
-      "popularity": 121.176,
+      "vote_average": 6.416,
+      "vote_count": 166,
+      "popularity": 118.9038,
       "original_language": "en",
       "genre_ids": [
         27,
@@ -677,9 +685,9 @@
       "poster_path": "/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
       "backdrop_path": "/sEsMwSDUWGIx9EfNxzM6KzVSsSQ.jpg",
       "release_date": "2026-09-23",
-      "vote_average": 6.809,
-      "vote_count": 356,
-      "popularity": 109.6646,
+      "vote_average": 6.805,
+      "vote_count": 382,
+      "popularity": 110.5793,
       "original_language": "en",
       "genre_ids": [
         53,
@@ -700,7 +708,7 @@
       "release_date": "2026-09-10",
       "vote_average": 5.9,
       "vote_count": 94,
-      "popularity": 107.5391,
+      "popularity": 114.4812,
       "original_language": "en",
       "genre_ids": [
         28,
@@ -712,22 +720,24 @@
       ]
     },
     {
-      "id": 1629051,
-      "title": "Never After Dark",
-      "original_title": "ネバーアフターダーク",
-      "overview": "A traveling psychic who helps lost souls cross over encounters a powerful entity at a remote house. While investigating its origins, she uncovers dark secrets and faces a deadly threat from an unexpected source.",
-      "poster_path": "/mkqCzIeHgnTSyF1fW6Pkq8kfdJE.jpg",
-      "backdrop_path": "/o73vpmtXq89bfSUMcAulLVN4TKP.jpg",
-      "release_date": "2026-06-05",
-      "vote_average": 7.1,
-      "vote_count": 31,
-      "popularity": 70.8646,
-      "original_language": "ja",
+      "id": 1288445,
+      "title": "Mutiny",
+      "original_title": "Mutiny",
+      "overview": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
+      "poster_path": "/pu2VxGlpGwffOx292w18b1tv96j.jpg",
+      "backdrop_path": "/qDa0fqDqIBCovRp975RvtGPcuN3.jpg",
+      "release_date": "2026-08-19",
+      "vote_average": 7.6,
+      "vote_count": 1047,
+      "popularity": 79.2795,
+      "original_language": "en",
       "genre_ids": [
-        27
+        28,
+        53
       ],
       "genres": [
-        "Horror"
+        "Action",
+        "Thriller"
       ]
     },
     {
@@ -738,9 +748,9 @@
       "poster_path": "/kYDCl2y0VPvhT5eYWbMRInPoB03.jpg",
       "backdrop_path": "/rueyXwlewVPAP5NkqCUJx4RjhqB.jpg",
       "release_date": "2026-08-20",
-      "vote_average": 8.219,
-      "vote_count": 1388,
-      "popularity": 75.6561,
+      "vote_average": 8.204,
+      "vote_count": 1415,
+      "popularity": 74.5084,
       "original_language": "en",
       "genre_ids": [
         35,
@@ -756,80 +766,17 @@
       ]
     },
     {
-      "id": 1288445,
-      "title": "Mutiny",
-      "original_title": "Mutiny",
-      "overview": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
-      "poster_path": "/pu2VxGlpGwffOx292w18b1tv96j.jpg",
-      "backdrop_path": "/e2QAGrEmbpmZpMymDRkDisJkvg9.jpg",
-      "release_date": "2026-08-19",
-      "vote_average": 7.637,
-      "vote_count": 1042,
-      "popularity": 77.9239,
-      "original_language": "en",
-      "genre_ids": [
-        28,
-        53
-      ],
-      "genres": [
-        "Action",
-        "Thriller"
-      ]
-    },
-    {
-      "id": 1302904,
-      "title": "Practical Magic 2",
-      "original_title": "Practical Magic 2",
-      "overview": "The Owens sisters must confront the dark curse that threatens to unravel their family once and for all.",
-      "poster_path": "/ogwQOLbCfncjvBhFb5l0OmQH8KC.jpg",
-      "backdrop_path": "/oIglj0Jy9duG4LnrRUpH8n001Pk.jpg",
-      "release_date": "2026-09-09",
-      "vote_average": 7.207,
-      "vote_count": 377,
-      "popularity": 65.7837,
-      "original_language": "en",
-      "genre_ids": [
-        10749,
-        14,
-        35
-      ],
-      "genres": [
-        "Romance",
-        "Fantasy",
-        "Comedy"
-      ]
-    },
-    {
-      "id": 1765072,
-      "title": "You Can See Everything",
-      "original_title": "You Can See Everything",
-      "overview": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-      "poster_path": "/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg",
-      "backdrop_path": "/nhIL3O4W9h5V5JbNQm7yjoDk3So.jpg",
-      "release_date": "2026-10-16",
-      "vote_average": 8.9,
-      "vote_count": 97,
-      "popularity": 63.4388,
-      "original_language": "en",
-      "genre_ids": [
-        99
-      ],
-      "genres": [
-        "Documentary"
-      ]
-    },
-    {
-      "id": 1400837,
-      "title": "Other Mommy",
-      "original_title": "Other Mommy",
-      "overview": "Young Bela forms a relationship with a sinister entity in her home that looks uncannily like her own mother, drawing her into a terrifying and increasingly dark world.",
-      "poster_path": "/fGRNCssTRrhYZxNzykGGCoMsAVq.jpg",
-      "backdrop_path": "/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg",
-      "release_date": "2026-10-07",
-      "vote_average": 5.8,
-      "vote_count": 198,
-      "popularity": 67.0561,
-      "original_language": "en",
+      "id": 1629051,
+      "title": "Never After Dark",
+      "original_title": "ネバーアフターダーク",
+      "overview": "A traveling psychic who helps lost souls cross over encounters a powerful entity at a remote house. While investigating its origins, she uncovers dark secrets and faces a deadly threat from an unexpected source.",
+      "poster_path": "/mkqCzIeHgnTSyF1fW6Pkq8kfdJE.jpg",
+      "backdrop_path": "/o73vpmtXq89bfSUMcAulLVN4TKP.jpg",
+      "release_date": "2026-06-05",
+      "vote_average": 7.1,
+      "vote_count": 32,
+      "popularity": 68.3287,
+      "original_language": "ja",
       "genre_ids": [
         27
       ],
@@ -847,13 +794,76 @@
       "release_date": "2026-02-13",
       "vote_average": 6,
       "vote_count": 9,
-      "popularity": 69.5725,
+      "popularity": 81.0241,
       "original_language": "es",
       "genre_ids": [
         27
       ],
       "genres": [
         "Horror"
+      ]
+    },
+    {
+      "id": 1400837,
+      "title": "Other Mommy",
+      "original_title": "Other Mommy",
+      "overview": "Young Bela forms a relationship with a sinister entity in her home that looks uncannily like her own mother, drawing her into a terrifying and increasingly dark world.",
+      "poster_path": "/fGRNCssTRrhYZxNzykGGCoMsAVq.jpg",
+      "backdrop_path": "/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg",
+      "release_date": "2026-10-07",
+      "vote_average": 5.8,
+      "vote_count": 201,
+      "popularity": 64.4891,
+      "original_language": "en",
+      "genre_ids": [
+        27
+      ],
+      "genres": [
+        "Horror"
+      ]
+    },
+    {
+      "id": 1302904,
+      "title": "Practical Magic 2",
+      "original_title": "Practical Magic 2",
+      "overview": "The Owens sisters must confront the dark curse that threatens to unravel their family once and for all.",
+      "poster_path": "/ogwQOLbCfncjvBhFb5l0OmQH8KC.jpg",
+      "backdrop_path": "/oIglj0Jy9duG4LnrRUpH8n001Pk.jpg",
+      "release_date": "2026-09-09",
+      "vote_average": 7.205,
+      "vote_count": 383,
+      "popularity": 64.5108,
+      "original_language": "en",
+      "genre_ids": [
+        10749,
+        14,
+        35
+      ],
+      "genres": [
+        "Romance",
+        "Fantasy",
+        "Comedy"
+      ]
+    },
+    {
+      "id": 1562642,
+      "title": "Ghost Soldier",
+      "original_title": "Ghost Soldier",
+      "overview": "Henry “Fitz” Fitzgerald has spent years living quietly off the grid, hiding from a past few people know anything about. But when a powerful foreign corporation moves into his hometown to seize his neighbors’ land for a massive payday, Fitz is forced to reveal who he really is: a former Special Forces soldier and advanced weapons developer. Armed with experimental technology, lethal combat skills, and an unwavering code of justice, Fitz wages a one-man war against an enemy that never saw him coming.",
+      "poster_path": "/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
+      "backdrop_path": "/ggqvhSdAASrseKuMlzk51sbvbE8.jpg",
+      "release_date": "2026-11-04",
+      "vote_average": 9,
+      "vote_count": 3,
+      "popularity": 62.3069,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "genres": [
+        "Action",
+        "Thriller"
       ]
     },
     {
@@ -864,9 +874,9 @@
       "poster_path": "/4KaPZSKnInnArErTTgy9Oy14leR.jpg",
       "backdrop_path": "/jiFLiatBtBALlAzV5R72gzspBad.jpg",
       "release_date": "2026-09-25",
-      "vote_average": 6.8,
-      "vote_count": 38,
-      "popularity": 62.0877,
+      "vote_average": 6.716,
+      "vote_count": 44,
+      "popularity": 60.6642,
       "original_language": "en",
       "genre_ids": [
         18,
@@ -889,9 +899,9 @@
       "poster_path": "/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
       "backdrop_path": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
       "release_date": "2026-03-15",
-      "vote_average": 8.63,
-      "vote_count": 8726,
-      "popularity": 2005.2215,
+      "vote_average": 8.629,
+      "vote_count": 8753,
+      "popularity": 1665.7735,
       "original_language": "en",
       "genre_ids": [
         878,
@@ -910,9 +920,9 @@
       "poster_path": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
       "backdrop_path": "/cfT29Im5VDvjE0RpyKOSdCKZal7.jpg",
       "release_date": "2008-07-16",
-      "vote_average": 8.5,
-      "vote_count": 37266,
-      "popularity": 1112.4836,
+      "vote_average": 8.54,
+      "vote_count": 37283,
+      "popularity": 782.8264,
       "original_language": "en",
       "genre_ids": [
         28,
@@ -933,9 +943,9 @@
       "poster_path": "/gAgWJhUSQWCgtKR8170nMkYlBda.jpg",
       "backdrop_path": "/3icyRAqgakNcQn6aDVz9libFmBA.jpg",
       "release_date": "2026-09-16",
-      "vote_average": 7.437,
-      "vote_count": 1727,
-      "popularity": 584.1726,
+      "vote_average": 7.492,
+      "vote_count": 1858,
+      "popularity": 695.1234,
       "original_language": "en",
       "genre_ids": [
         27,
@@ -949,26 +959,24 @@
       ]
     },
     {
-      "id": 791523,
-      "title": "Wildwood",
-      "original_title": "Wildwood",
-      "overview": "Prue and her classmate Curtis are drawn into a magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to rescue Prue's abducted baby brother from a murder of crows led by a mysterious woman named Alexandra.",
-      "poster_path": "/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
-      "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
-      "release_date": "2026-10-19",
-      "vote_average": 8.498,
-      "vote_count": 223,
-      "popularity": 303.6913,
+      "id": 1263337,
+      "title": "Heart of the Beast",
+      "original_title": "Heart of the Beast",
+      "overview": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements.",
+      "poster_path": "/6sYemVUn79UPKz1ZsSG6kPU4RVy.jpg",
+      "backdrop_path": "/kpqsljPQtWqPKJBTAEtoXtQZ9Ko.jpg",
+      "release_date": "2026-09-19",
+      "vote_average": 7.293,
+      "vote_count": 516,
+      "popularity": 410.9194,
       "original_language": "en",
       "genre_ids": [
-        16,
         12,
-        14
+        53
       ],
       "genres": [
-        "Animation",
         "Adventure",
-        "Fantasy"
+        "Thriller"
       ]
     },
     {
@@ -979,9 +987,9 @@
       "poster_path": "/wXln4DUrwcyjcFPwgQxFPYTlG1Z.jpg",
       "backdrop_path": "/o3XwuDUj0n8qnK91p6q8LKfr6rj.jpg",
       "release_date": "2026-10-09",
-      "vote_average": 6.028,
-      "vote_count": 144,
-      "popularity": 392.0758,
+      "vote_average": 6.093,
+      "vote_count": 162,
+      "popularity": 407.3366,
       "original_language": "es",
       "genre_ids": [
         28,
@@ -995,27 +1003,6 @@
       ]
     },
     {
-      "id": 11308,
-      "title": "The Hotel New Hampshire",
-      "original_title": "The Hotel New Hampshire",
-      "overview": "Over the course of several years beginning in the 1950s, a man and his oddball family run hotels in New England and Vienna, as unexpected events change their lives forever.",
-      "poster_path": "/9XGGGniMtBqhox7JAV5JujlUqFz.jpg",
-      "backdrop_path": "/6ja3HVez4A4XPNSMHhuOiu2UTXm.jpg",
-      "release_date": "1984-03-09",
-      "vote_average": 5.675,
-      "vote_count": 140,
-      "popularity": 268.0378,
-      "original_language": "en",
-      "genre_ids": [
-        35,
-        18
-      ],
-      "genres": [
-        "Comedy",
-        "Drama"
-      ]
-    },
-    {
       "id": 1058424,
       "title": "Hope",
       "original_title": "호프",
@@ -1023,9 +1010,9 @@
       "poster_path": "/6VY1ZKgpsc8CfGsQcCGiYEgHdH0.jpg",
       "backdrop_path": "/j96rurZqmBjyY37Fncl3IB0qJNe.jpg",
       "release_date": "2026-07-15",
-      "vote_average": 6.741,
-      "vote_count": 518,
-      "popularity": 371.1303,
+      "vote_average": 6.722,
+      "vote_count": 534,
+      "popularity": 396.0525,
       "original_language": "ko",
       "genre_ids": [
         878,
@@ -1046,9 +1033,9 @@
       "poster_path": "/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
       "backdrop_path": "/subj7knTn4DeS6KS7qI66EQKe9i.jpg",
       "release_date": "2026-07-29",
-      "vote_average": 8.478,
-      "vote_count": 6594,
-      "popularity": 367.3115,
+      "vote_average": 8.477,
+      "vote_count": 6636,
+      "popularity": 389.122,
       "original_language": "en",
       "genre_ids": [
         878,
@@ -1069,9 +1056,9 @@
       "poster_path": "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
       "backdrop_path": "/iDiTY1wA35YWzTmXLTtqaxtN6tc.jpg",
       "release_date": "2026-07-15",
-      "vote_average": 8.018,
-      "vote_count": 4404,
-      "popularity": 328.2263,
+      "vote_average": 8.014,
+      "vote_count": 4466,
+      "popularity": 418.3764,
       "original_language": "en",
       "genre_ids": [
         12,
@@ -1085,16 +1072,39 @@
       ]
     },
     {
+      "id": 791523,
+      "title": "Wildwood",
+      "original_title": "Wildwood",
+      "overview": "Prue and her classmate Curtis are drawn into a magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to rescue Prue's abducted baby brother from a murder of crows led by a mysterious woman named Alexandra.",
+      "poster_path": "/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
+      "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+      "release_date": "2026-10-19",
+      "vote_average": 8.511,
+      "vote_count": 235,
+      "popularity": 164.3955,
+      "original_language": "en",
+      "genre_ids": [
+        16,
+        12,
+        14
+      ],
+      "genres": [
+        "Animation",
+        "Adventure",
+        "Fantasy"
+      ]
+    },
+    {
       "id": 1813355,
       "title": "A Story of Derry",
       "original_title": "A Story of Derry",
       "overview": "Hundreds of years before Pennywise, three youngsters venture into the Western Wood...where they encounter a terrifying ancient spirit.",
       "poster_path": "/4PtzGcegF5Po1NmDAW9IklyvAUh.jpg",
-      "backdrop_path": "/hw3d1wDXTsEVyViubbTgHsMIvX0.jpg",
+      "backdrop_path": "/8vky6e0D4dSZMlxHWXBIRRFP1Pb.jpg",
       "release_date": "2026-10-31",
-      "vote_average": 7,
-      "vote_count": 83,
-      "popularity": 292.6019,
+      "vote_average": 6.867,
+      "vote_count": 94,
+      "popularity": 342.6898,
       "original_language": "en",
       "genre_ids": [
         18,
@@ -1108,6 +1118,27 @@
       ]
     },
     {
+      "id": 11308,
+      "title": "The Hotel New Hampshire",
+      "original_title": "The Hotel New Hampshire",
+      "overview": "Over the course of several years beginning in the 1950s, a man and his oddball family run hotels in New England and Vienna, as unexpected events change their lives forever.",
+      "poster_path": "/9XGGGniMtBqhox7JAV5JujlUqFz.jpg",
+      "backdrop_path": "/6ja3HVez4A4XPNSMHhuOiu2UTXm.jpg",
+      "release_date": "1984-03-09",
+      "vote_average": 5.675,
+      "vote_count": 140,
+      "popularity": 277.1333,
+      "original_language": "en",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
       "id": 354912,
       "title": "Coco",
       "original_title": "Coco",
@@ -1116,8 +1147,8 @@
       "backdrop_path": "/g7CHF8gTLGooTbP4GznIGwaqAGL.jpg",
       "release_date": "2017-10-27",
       "vote_average": 8.207,
-      "vote_count": 21812,
-      "popularity": 252.9176,
+      "vote_count": 21823,
+      "popularity": 253.8554,
       "original_language": "en",
       "genre_ids": [
         10751,
@@ -1133,27 +1164,6 @@
       ]
     },
     {
-      "id": 1263337,
-      "title": "Heart of the Beast",
-      "original_title": "Heart of the Beast",
-      "overview": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements.",
-      "poster_path": "/6sYemVUn79UPKz1ZsSG6kPU4RVy.jpg",
-      "backdrop_path": "/kpqsljPQtWqPKJBTAEtoXtQZ9Ko.jpg",
-      "release_date": "2026-09-19",
-      "vote_average": 7.318,
-      "vote_count": 478,
-      "popularity": 301.412,
-      "original_language": "en",
-      "genre_ids": [
-        12,
-        53
-      ],
-      "genres": [
-        "Adventure",
-        "Thriller"
-      ]
-    },
-    {
       "id": 1294189,
       "title": "The Mongoose",
       "original_title": "The Mongoose",
@@ -1161,9 +1171,9 @@
       "poster_path": "/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg",
       "backdrop_path": "/bySCyjQXNPgsnLTlgJpSMnRazPD.jpg",
       "release_date": "2026-10-29",
-      "vote_average": 5.815,
-      "vote_count": 81,
-      "popularity": 203.679,
+      "vote_average": 5.622,
+      "vote_count": 94,
+      "popularity": 203.4978,
       "original_language": "en",
       "genre_ids": [
         28,
@@ -1171,33 +1181,6 @@
       ],
       "genres": [
         "Action",
-        "Thriller"
-      ]
-    },
-    {
-      "id": 1657630,
-      "title": "The Awakening",
-      "original_title": "El despertar",
-      "overview": "An elite military unit on a mission in the South American jungle encounters a deadly supernatural force revealing an ancient presence that continues to claim anyone who dares enter its domain.",
-      "poster_path": "/7pUGiRg9Gq1JqmmNSJLLSonOKum.jpg",
-      "backdrop_path": "/4pYKqctQvvdyhuGjiK4szH9jEv9.jpg",
-      "release_date": "2026-10-29",
-      "vote_average": 6.4,
-      "vote_count": 102,
-      "popularity": 174.9467,
-      "original_language": "es",
-      "genre_ids": [
-        27,
-        28,
-        10752,
-        14,
-        53
-      ],
-      "genres": [
-        "Horror",
-        "Action",
-        "War",
-        "Fantasy",
         "Thriller"
       ]
     },
@@ -1209,9 +1192,9 @@
       "poster_path": "/hSmIJluOJmTWvJs4d7kHRxjc8s8.jpg",
       "backdrop_path": "/oqrYIDH4tvfEzPe1yqT4jzmAWHQ.jpg",
       "release_date": "2026-11-03",
-      "vote_average": 8.1,
-      "vote_count": 81,
-      "popularity": 187.1271,
+      "vote_average": 8,
+      "vote_count": 109,
+      "popularity": 200.2939,
       "original_language": "ja",
       "genre_ids": [
         878,
@@ -1232,9 +1215,9 @@
       "poster_path": "/rmaNMA1seHqpjtnYKzyynFAr1g8.jpg",
       "backdrop_path": "/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
       "release_date": "2026-09-30",
-      "vote_average": 6.97,
-      "vote_count": 622,
-      "popularity": 182.2259,
+      "vote_average": 7.003,
+      "vote_count": 646,
+      "popularity": 190.1577,
       "original_language": "en",
       "genre_ids": [
         9648,
@@ -1246,23 +1229,29 @@
       ]
     },
     {
-      "id": 1596275,
-      "title": "Drive - The Pretenders",
-      "original_title": "Drive – The Pretenders",
-      "overview": "A young mechanic fakes an engagement with racing's most scandalous star — officially for his reputation, secretly for her own shot behind the wheel. But soon the lie threatens to destroy everything — including what's already become so much more than just a deal.",
-      "poster_path": "/s9syckECnUYhKePQ1A0DC0mFVZ9.jpg",
-      "backdrop_path": "/hbz4aeVsjnKb2HRoFbbr46Egh8y.jpg",
-      "release_date": "2026-10-27",
-      "vote_average": 7.653,
-      "vote_count": 134,
-      "popularity": 160.3935,
-      "original_language": "de",
+      "id": 1657630,
+      "title": "The Awakening",
+      "original_title": "El despertar",
+      "overview": "An elite military unit on a mission in the South American jungle encounters a deadly supernatural force revealing an ancient presence that continues to claim anyone who dares enter its domain.",
+      "poster_path": "/7pUGiRg9Gq1JqmmNSJLLSonOKum.jpg",
+      "backdrop_path": "/4pYKqctQvvdyhuGjiK4szH9jEv9.jpg",
+      "release_date": "2026-10-29",
+      "vote_average": 6.405,
+      "vote_count": 110,
+      "popularity": 177.6359,
+      "original_language": "es",
       "genre_ids": [
-        10749,
+        27,
+        28,
+        10752,
+        14,
         53
       ],
       "genres": [
-        "Romance",
+        "Horror",
+        "Action",
+        "War",
+        "Fantasy",
         "Thriller"
       ]
     },
@@ -1274,15 +1263,59 @@
       "poster_path": "/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
       "backdrop_path": "/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
       "release_date": "2026-09-01",
-      "vote_average": 7.294,
-      "vote_count": 753,
-      "popularity": 160.6614,
+      "vote_average": 7.289,
+      "vote_count": 758,
+      "popularity": 165.1921,
       "original_language": "en",
       "genre_ids": [
         53
       ],
       "genres": [
         "Thriller"
+      ]
+    },
+    {
+      "id": 1596275,
+      "title": "Drive - The Pretenders",
+      "original_title": "Drive – The Pretenders",
+      "overview": "A young mechanic fakes an engagement with racing's most scandalous star — officially for his reputation, secretly for her own shot behind the wheel. But soon the lie threatens to destroy everything — including what's already become so much more than just a deal.",
+      "poster_path": "/s9syckECnUYhKePQ1A0DC0mFVZ9.jpg",
+      "backdrop_path": "/hbz4aeVsjnKb2HRoFbbr46Egh8y.jpg",
+      "release_date": "2026-10-27",
+      "vote_average": 7.7,
+      "vote_count": 144,
+      "popularity": 157.6055,
+      "original_language": "de",
+      "genre_ids": [
+        10749,
+        53
+      ],
+      "genres": [
+        "Romance",
+        "Thriller"
+      ]
+    },
+    {
+      "id": 656908,
+      "title": "Ramayana: Rise of a Legend",
+      "original_title": "रामायणम्",
+      "overview": "An ancient epic follows a young prince and princess whose marriage and subsequent exile mark the beginning of a legendary journey. Their story of love, duty and destiny sets the stage for greater challenges ahead.",
+      "poster_path": "/dPrtk4iNf6T5w8fWfg4uxDDbJSW.jpg",
+      "backdrop_path": "/yHVZncPRZr63mezRX20IyKLrSkv.jpg",
+      "release_date": "2026-11-05",
+      "vote_average": 7.5,
+      "vote_count": 22,
+      "popularity": 153.5361,
+      "original_language": "hi",
+      "genre_ids": [
+        14,
+        28,
+        12
+      ],
+      "genres": [
+        "Fantasy",
+        "Action",
+        "Adventure"
       ]
     },
     {
@@ -1294,8 +1327,8 @@
       "backdrop_path": "/bDsmYvrzto7xrEwqDpLC3SPhn9A.jpg",
       "release_date": "2026-09-25",
       "vote_average": 8.1,
-      "vote_count": 188,
-      "popularity": 143.0987,
+      "vote_count": 195,
+      "popularity": 152.4349,
       "original_language": "es",
       "genre_ids": [
         18,
@@ -1305,162 +1338,139 @@
         "Drama",
         "War"
       ]
-    },
-    {
-      "id": 1514026,
-      "title": "Buddy",
-      "original_title": "Buddy",
-      "overview": "Inside the colorful world of \"It's Buddy!\", a group of children spend their days singing, dancing, and helping Buddy - bright orange unicorn - spread happiness. But when one child refuses to play along, Buddy is not pleased and cracks begin to appear in this seemingly perfect world.",
-      "poster_path": "/1BdZbNvl1SfrrX8J9X5tQzN6Ivu.jpg",
-      "backdrop_path": "/sMmG82PtjK8A9rVc34gwKQtCm3A.jpg",
-      "release_date": "2026-08-27",
-      "vote_average": 6.908,
-      "vote_count": 256,
-      "popularity": 140.4166,
-      "original_language": "en",
-      "genre_ids": [
-        27,
-        35,
-        14
-      ],
-      "genres": [
-        "Horror",
-        "Comedy",
-        "Fantasy"
-      ]
     }
   ],
   "hero": {
     "hollywood": {
-      "id": 1368337,
-      "title": "The Odyssey",
-      "original_title": "The Odyssey",
-      "overview": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
-      "poster_path": "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
-      "backdrop_path": "/iDiTY1wA35YWzTmXLTtqaxtN6tc.jpg",
-      "release_date": "2026-07-17",
-      "vote_average": 8.018,
-      "vote_count": 4404,
-      "popularity": 328.2263,
+      "id": 1228834,
+      "title": "The Fix",
+      "original_title": "The Fix",
+      "overview": "Disillusioned by the end of the war in Afghanistan, a group of disgraced, war-torn ex-CIA operatives set out to Tehran to take down a life-changing score.",
+      "poster_path": "/jlP8XDjZN89GrpM3je5Uf8Grqx8.jpg",
+      "backdrop_path": "/dJTWIecL2vxsCRl5G0lRhPsfrhc.jpg",
+      "release_date": "2026-09-11",
+      "vote_average": 5.9,
+      "vote_count": 94,
+      "popularity": 114.4812,
       "original_language": "en",
       "genre_ids": [
-        12,
         28,
-        14
-      ],
-      "genres": [
-        "Adventure",
-        "Action",
-        "Fantasy"
-      ]
-    },
-    "bollywood": {
-      "id": 26022,
-      "title": "My Name Is Khan",
-      "original_title": "My Name Is Khan",
-      "overview": "Rizwan Khan, a Muslim from the Borivali section of Mumbai, has Asperger's syndrome. He marries a Hindu single mother, Mandira, in San Francisco. After 9/11, Rizwan is detained by authorities at LAX who treat him as a terrorist because of his condition and his race.",
-      "poster_path": "/5Y36lCiNyyV71mjq6LavgiggbhT.jpg",
-      "backdrop_path": "/zGCnIADWwpjGllYv8DgT8HIuIQl.jpg",
-      "release_date": "2010-02-12",
-      "vote_average": 8,
-      "vote_count": 1527,
-      "popularity": 5.6316,
-      "original_language": "hi",
-      "genre_ids": [
-        18,
-        10749
-      ],
-      "genres": [
-        "Drama",
-        "Romance"
-      ]
-    },
-    "kollywood": {
-      "id": 1515692,
-      "title": "Baththa",
-      "original_title": "பத்தா",
-      "overview": "In 1986 Madras, a timid eight-year-old boy accidentally traps a feared gangster inside a deserted school toilet. As the gangster is forced to confront hunger, loneliness and his own vulnerability, an unlikely bond begins to grow between the two.",
-      "poster_path": "/7wHBYs8HHmTGe4nXLpMEAoDSK2o.jpg",
-      "backdrop_path": "/5sBnZMT1aJ6cBvehKOzOOLdI6bz.jpg",
-      "release_date": "2026-10-01",
-      "vote_average": 7.857,
-      "vote_count": 14,
-      "popularity": 23.5632,
-      "original_language": "ta",
-      "genre_ids": [
-        18,
-        35,
-        28
-      ],
-      "genres": [
-        "Drama",
-        "Comedy",
-        "Action"
-      ]
-    },
-    "tollywood": {
-      "id": 1811964,
-      "title": "SI Yugandhar",
-      "original_title": "SI Yugandhar",
-      "overview": "An honest cop's discovery of a mysterious body launches a high-stakes investigation, forcing him to uncover a dark web of secrets hidden beneath the city's surface.",
-      "poster_path": "/mIK5YnqQWKZxyQgaeDDVywUxNWo.jpg",
-      "backdrop_path": "/hFKZK6R1iFvB1Da01rN28CqWYmi.jpg",
-      "release_date": "2026-10-02",
-      "vote_average": 4,
-      "vote_count": 1,
-      "popularity": 2.9358,
-      "original_language": "te",
-      "genre_ids": [
-        28,
-        80,
         53
       ],
       "genres": [
         "Action",
+        "Thriller"
+      ]
+    },
+    "bollywood": {
+      "id": 360814,
+      "title": "Dangal",
+      "original_title": "दंगल",
+      "overview": "Dangal is an extraordinary true story based on the life of Mahavir Singh and his two daughters, Geeta and Babita Phogat. The film traces the inspirational journey of a father who trains his daughters to become world class wrestlers.",
+      "poster_path": "/cJRPOLEexI7qp2DKtFfCh7YaaUG.jpg",
+      "backdrop_path": "/l0fNAHLOFReQJsxCOmGWvJDnimn.jpg",
+      "release_date": "2016-12-23",
+      "vote_average": 7.865,
+      "vote_count": 1250,
+      "popularity": 5.9283,
+      "original_language": "hi",
+      "genre_ids": [
+        18,
+        10751,
+        35
+      ],
+      "genres": [
+        "Drama",
+        "Family",
+        "Comedy"
+      ]
+    },
+    "kollywood": {
+      "id": 1618200,
+      "title": "The Dark Heaven",
+      "original_title": "தீ டார்க் ஹெவன்",
+      "overview": "In the Hill Village of Mekkarai, Where It is Customary for Men to Die Every Seven Years During the Month of June, a Newly Appointed Police Inspector Arrives to Investigate a Series of Mysterious Murders. As He Digs Deeper Into the Village's Dark Secrets and Long-standing Beliefs, He Finds Himself Trapped in a Web of Crime, Fear, and Hidden Truths.",
+      "poster_path": "/xFr0Q7j2JmOwBJnvImIgTAWBk4U.jpg",
+      "backdrop_path": "/4ercU8wa7OAexszQG3SSNuyB8fy.jpg",
+      "release_date": "2026-09-18",
+      "vote_average": 0,
+      "vote_count": 0,
+      "popularity": 10.4652,
+      "original_language": "ta",
+      "genre_ids": [
+        80,
+        53
+      ],
+      "genres": [
         "Crime",
         "Thriller"
       ]
     },
-    "mollywood": {
-      "id": 1290035,
-      "title": "Avaraachan & Sons",
-      "original_title": "അവറാച്ചൻ & Sons",
-      "overview": "Follows Avarachan, his children and the various family and social relationships that shape their lives.",
-      "poster_path": "/wRKg0WoPV0D3bCl1B5jJtcRdU1Z.jpg",
-      "backdrop_path": "/fvfXiUaexUqCitmOftGBXgNO6Of.jpg",
-      "release_date": "2026-10-02",
-      "vote_average": 7.333,
-      "vote_count": 3,
-      "popularity": 19.3673,
-      "original_language": "ml",
+    "tollywood": {
+      "id": 811941,
+      "title": "Devara: Part 1",
+      "original_title": "దేవర",
+      "overview": "A mighty warrior takes a stand against the criminal deeds of his village, while his mild-mannered son grows up to walk his own path.",
+      "poster_path": "/lQfuaXjANoTsdx5iS0gCXlK9D2L.jpg",
+      "backdrop_path": "/hAQnXxOwCjgYcKRgTdYPRC8neqL.jpg",
+      "release_date": "2024-09-27",
+      "vote_average": 6.814,
+      "vote_count": 231,
+      "popularity": 4.0574,
+      "original_language": "te",
       "genre_ids": [
-        18
+        18,
+        28
       ],
       "genres": [
-        "Drama"
+        "Drama",
+        "Action"
+      ]
+    },
+    "mollywood": {
+      "id": 1544847,
+      "title": "Pradhama Drishtiya Kuttakkar",
+      "original_title": "初视罪犯",
+      "overview": "After her husband's tragic death, Aleena joins the police force through a compassionate appointment. What begins as a quiet new chapter soon turns into a high-stakes battle of wits and courage, testing everything she believes about justice, loyalty, and herself.",
+      "poster_path": "/yJ78kbekUBZMcxla1lXABI9o2wL.jpg",
+      "backdrop_path": "/zmfUqsFcQs6BjLJStofM5MD2l7L.jpg",
+      "release_date": "2026-09-11",
+      "vote_average": 5.6,
+      "vote_count": 7,
+      "popularity": 6.5677,
+      "original_language": "ml",
+      "genre_ids": [
+        80,
+        53,
+        9648
+      ],
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Mystery"
       ]
     },
     "kdrama": {
-      "id": 110415,
-      "title": "Snowpiercer",
-      "original_title": "설국열차",
-      "overview": "In a future where a failed global-warming experiment kills off most life on the planet, a class system evolves aboard the Snowpiercer; a train that travels around the globe via a perpetual-motion engine.",
-      "poster_path": "/kw6YQudA0TMcNmGUGy5XIw7zbnV.jpg",
-      "backdrop_path": "/55vkNtb83bSwbdWrQTVZTGLBcLx.jpg",
-      "release_date": "2013-08-01",
-      "vote_average": 6.909,
-      "vote_count": 10817,
-      "popularity": 10.0992,
+      "id": 639988,
+      "title": "No Other Choice",
+      "original_title": "어쩔수가없다",
+      "overview": "After being laid off and humiliated by a ruthless job market, a veteran paper mill manager descends into violence in a desperate bid to reclaim his dignity.",
+      "poster_path": "/vc2S0dvgpsM0XfSiXZDMVkRCSSU.jpg",
+      "backdrop_path": "/1eM6Ey1FzpgJigrxRiSYtntSWq7.jpg",
+      "release_date": "2025-09-24",
+      "vote_average": 7.506,
+      "vote_count": 1382,
+      "popularity": 8.9004,
       "original_language": "ko",
       "genre_ids": [
-        28,
-        878,
-        18
+        35,
+        80,
+        53
       ],
       "genres": [
-        "Action",
-        "Science Fiction",
-        "Drama"
+        "Comedy",
+        "Crime",
+        "Thriller"
       ]
     }
   }
